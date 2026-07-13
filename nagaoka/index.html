@@ -86,7 +86,12 @@
   .qr-cap{font-size:11px; color:var(--mut); letter-spacing:.5px;}
   .qr-dl{font:600 11px/1 "Noto Sans JP",sans-serif; color:var(--gold-dk); background:none;
     border:none; cursor:pointer; text-decoration:underline; text-underline-offset:3px; padding:2px;}
-  .foot{padding:20px 24px 30px; text-align:center;}
+  .docslink{padding:6px 22px 0;}
+  .docslink a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#FEFDFB;text-decoration:none;color:var(--gold-dk);font-size:12.5px;font-weight:700;letter-spacing:1px;transition:.18s;}
+  .docslink a:hover{border-color:var(--gold);background:#FBF6EC;}
+  .docslink a:active{transform:scale(.99);}
+  .docslink svg{width:17px;height:17px;stroke:var(--gold-dk);fill:none;stroke-width:1.7;flex-shrink:0;}
+  .foot{padding:14px 24px 30px; text-align:center;}
   .foot .clinic{font-size:11px; color:var(--gold-dk); font-weight:700; letter-spacing:2px; margin-bottom:8px;}
   .foot .info{font-size:10px; color:var(--mut); line-height:1.75;}
   .hide{display:none !important;}
@@ -151,6 +156,7 @@
     </div>
   </div>
 
+  <div class="docslink"><a href="../doctors/"><svg viewBox="0 0 24 24"><path d="M12 21c-4.5 0-8-2-8-4V7c0-2 3.5-4 8-4s8 2 8 4v10c0 2-3.5 4-8 4z"/><path d="M8 10h8M8 14h5"/></svg><span data-i="docs">医師紹介</span></a></div>
   <div class="foot">
     <div class="clinic">BiOLiS CLINIC</div>
     <div class="info" id="foot">〒103-0028 東京都中央区八重洲1-3-18 VORT東京八重洲maxim 5F<br>受付 10:00–19:00 ／ 東京駅 八重洲北口 徒歩5分</div>
@@ -163,15 +169,15 @@ const I = {
   ja:{call:"電話",email:"メール",line:"LINE予約",ig:"Instagram",map:"アクセス",web:"ウェブ",save:"連絡先を保存",
       title:`ITシステムマネージャー`, tagline:"「未来の美と健康」をデザイン",
       foot:"〒103-0028 東京都中央区八重洲1-3-18 VORT東京八重洲maxim 5F<br>受付 10:00–19:00 ／ 東京駅 八重洲北口 徒歩5分",
-      qrcap:"スキャンしてデジタル名刺を開く", qrsave:"QRを保存", flip:"タップで裏返す", nameMain:"長岡 慎介", nameSub:"NAGAOKA SHINSUKE"},
+      qrcap:"スキャンしてデジタル名刺を開く", qrsave:"QRを保存", flip:"タップで裏返す", docs:"医師紹介", nameMain:"長岡 慎介", nameSub:"NAGAOKA SHINSUKE"},
   ko:{call:"전화",email:"이메일",line:"LINE 예약",ig:"인스타그램",map:"오시는 길",web:"웹사이트",save:"연락처 저장",
       title:`IT 시스템 매니저`, tagline:"「미래의 아름다움과 건강」을 디자인",
       foot:"도쿄도 주오구 야에스 1-3-18 VORT東京八重洲maxim 5F<br>접수 10:00–19:00 ／ 도쿄역 야에스 북쪽출구 도보 5분",
-      qrcap:"스캔하여 디지털 명함 열기", qrsave:"QR 저장", flip:"탭하여 뒤집기", nameMain:"나가오카 신스케", nameSub:"NAGAOKA SHINSUKE"},
+      qrcap:"스캔하여 디지털 명함 열기", qrsave:"QR 저장", flip:"탭하여 뒤집기", docs:"의료진 소개", nameMain:"나가오카 신스케", nameSub:"NAGAOKA SHINSUKE"},
   en:{call:"Call",email:"Email",line:"LINE Reservation",ig:"Instagram",map:"Access",web:"Website",save:"Save Contact",
       title:`IT System Manager`, tagline:"Designing future beauty & health",
       foot:"<span style='white-space:nowrap'>VORT Yaesu maxim 5F, 1-3-18 Yaesu, Chuo-ku, Tokyo</span><br>Open 10:00–19:00 ／ 5 min from Tokyo Station",
-      qrcap:"Scan to open digital card", qrsave:"Save QR", flip:"Tap to flip", nameMain:"Nagaoka Shinsuke", nameSub:"長岡 慎介"}
+      qrcap:"Scan to open digital card", qrsave:"Save QR", flip:"Tap to flip", docs:"Our Doctors", nameMain:"Nagaoka Shinsuke", nameSub:"長岡 慎介"}
 };
 function setLang(l){
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
