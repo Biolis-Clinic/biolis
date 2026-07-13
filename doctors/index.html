@@ -9,8 +9,9 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{font-family:"Noto Sans JP","Noto Sans KR",sans-serif;background:radial-gradient(120% 70% at 50% 0%,#FBF7F0 0%,var(--cream) 55%,var(--cream2) 100%);color:var(--ink);display:flex;justify-content:center;padding:26px 14px 44px;min-height:100vh;}
 .lang{position:fixed;top:14px;right:14px;display:flex;gap:2px;background:rgba(255,255,255,.72);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:999px;padding:3px;z-index:10;}
-.lang button{font:600 11px/1 "Noto Sans JP",sans-serif;letter-spacing:.5px;color:var(--mut);background:none;border:none;padding:6px 10px;border-radius:999px;cursor:pointer;}
-.lang button.on{background:var(--ink);color:#fff;}
+.lang button{font:600 10.5px/1 "Noto Sans JP","Noto Sans KR",sans-serif;letter-spacing:.3px;color:var(--mut);background:none;border:none;padding:7px 11px;border-radius:999px;cursor:pointer;transition:.18s;white-space:nowrap;}
+.lang button:hover{color:var(--gold-dk);}
+.lang button.on{background:linear-gradient(100deg,#B79350,#D8BE86 45%,#C4A461 55%,#A9863E);color:#fff;box-shadow:0 3px 10px -4px rgba(160,120,50,.65);}
 .wrap{width:100%;max-width:430px;}
 .head{text-align:center;padding:34px 10px 20px;}
 .head img{width:62%;max-width:220px;margin:0 auto 12px;display:block;}
@@ -38,9 +39,9 @@ body{font-family:"Noto Sans JP","Noto Sans KR",sans-serif;background:radial-grad
 </style></head>
 <body>
 <div class="lang">
-  <button data-l="ja" class="on" onclick="setLang('ja')">JP</button>
-  <button data-l="ko" onclick="setLang('ko')">KO</button>
-  <button data-l="en" onclick="setLang('en')">EN</button>
+  <button data-l="ja" class="on" onclick="setLang('ja')">日本語</button>
+  <button data-l="ko" onclick="setLang('ko')">한국어</button>
+  <button data-l="en" onclick="setLang('en')">English</button>
 </div>
 <div class="wrap">
   <div class="head">
