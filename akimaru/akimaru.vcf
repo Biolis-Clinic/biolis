@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Akimaru;Juri;;;
+FN:Juri Akimaru
+ORG:BiOLiS CLINIC
+TITLE:Nurse
+TEL;TYPE=CELL:+81-3-6262-2677
+EMAIL;TYPE=WORK:akimaru@biolisclinic.com
+URL:https://biolisclinic.com
+ADR;TYPE=WORK:;;1-3-18 Yaesu VORT Tokyo Yaesu maxim 5F;Chuo-ku;Tokyo;103-0028;Japan
+X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/biolisclinic
+END:VCARD
