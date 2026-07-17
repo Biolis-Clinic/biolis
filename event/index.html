@@ -123,7 +123,7 @@ td.tval{text-align:right;white-space:nowrap}
 .tel-btn{display:flex;width:fit-content;margin:20px auto 0;align-items:center;gap:12px;padding:13px 26px;border-radius:14px;background:var(--bar);text-decoration:none;box-shadow:0 6px 16px rgba(32,29,27,.22);transition:.18s}
 .tel-btn:active{transform:scale(.98)}
 .tel-btn:hover{background:#2c2825}
-.tel-btn svg{width:22px;height:22px;stroke:var(--champ);fill:none;stroke-width:1.7;flex-shrink:0}
+.tel-btn svg{width:22px;height:22px;stroke:url(#tgold);fill:none;stroke-width:1.9;flex-shrink:0}
 .tel-btn-txt{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;color:#fff}
 .tel-btn-txt small{font-size:11px;font-weight:500;color:var(--champ);letter-spacing:.04em}
 .tel-btn-txt{font-size:21px;font-weight:900;letter-spacing:.02em}
@@ -189,6 +189,8 @@ footer .fb{color:var(--champ);font-weight:700;font-size:14px;letter-spacing:.1em
 .cal-foot a{color:var(--champ-dk);font-weight:700;text-decoration:none}
 @media(min-width:720px){.cal-wrap{flex-direction:row;gap:24px}.cal-month{flex:1;min-width:0}.cal-mnum{font-size:48px}}
 @media(max-width:560px){
+  .night .nt{font-size:clamp(15px,5vw,24px);white-space:nowrap;letter-spacing:.02em}
+  .copy .l2{font-size:clamp(13px,4.2vw,24px);white-space:nowrap;letter-spacing:.02em}
   /* ---- price rows: stack name over price on mobile ---- */
   table.price td{padding:0}
   table.price tr{display:block;padding:13px 2px;border-bottom:1px solid #EFE9DD}
@@ -239,6 +241,11 @@ footer .fb{color:var(--champ);font-weight:700;font-size:14px;letter-spacing:.1em
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="tgold" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#F0D9A8"/><stop offset="45%" stop-color="#D8BE86"/>
+<stop offset="55%" stop-color="#C9A25C"/><stop offset="100%" stop-color="#A9863E"/>
+</linearGradient></defs></svg>
 
 <!-- HERO -->
 <header class="hero">
