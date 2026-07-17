@@ -249,10 +249,28 @@ function buildVCard(){
   ].join("\r\n");
 }
 function saveVCard(){
-  const blob=new Blob([buildVCard()],{type:"text/vcard;charset=utf-8"});
-  const a=document.createElement("a");
-  a.href=URL.createObjectURL(blob); a.download="Terufumi Ryu.vcf";
-  document.body.appendChild(a); a.click(); a.remove();
+  var vcard=buildVCard();
+  var fname="Terufumi Ryu.vcf";
+  // iOS (incl. in-app browsers like LINE/Instagram): Blob download is blocked.
+  // Navigate to a data: URI so Safari opens the contact card ("Add Contact").
+  var ua=navigator.userAgent||"";
+  var isIOS=/iP(hone|od|ad)/.test(ua) || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+  if(isIOS){
+    var dataURI="data:text/vcard;charset=utf-8,"+encodeURIComponent(vcard);
+    window.location.href=dataURI;
+    return;
+  }
+  // Android & desktop: try Blob download; fall back to data: URI on failure.
+  try{
+    var blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a");
+    a.href=url; a.download=fname;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){a.remove(); URL.revokeObjectURL(url);},1500);
+  }catch(e){
+    window.location.href="data:text/vcard;charset=utf-8,"+encodeURIComponent(vcard);
+  }
 }
 // QR encodes the hosted card URL if online, else the vCard (scan -> save contact)
 setTimeout(function(){var f=document.getElementById("flip"); if(f){f.classList.add("flipped"); setTimeout(function(){f.classList.remove("flipped");},1600);}},1100);
