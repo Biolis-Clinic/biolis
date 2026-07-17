@@ -296,24 +296,24 @@ function copyPageURL(){
   }
 }
 function saveVCard(){
-  // In-app browsers (LINE/KakaoTalk/Instagram/FB...) block BOTH file download and data: URIs.
-  // Show guidance to open in the default browser instead.
-  if(isInApp()){ showSaveHelp(); return; }
   var vcard=buildVCard();
   var fname="Terufumi Ryu.vcf";
   var ua=navigator.userAgent||"";
   var isIOS=/iP(hone|od|ad)/.test(ua) || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
   if(isIOS){
+    // iOS: navigating to the vCard data URI makes Safari show the
+    // Contacts "Add Contact" sheet right away — one tap to save.
     window.location.href="data:text/vcard;charset=utf-8,"+encodeURIComponent(vcard);
     return;
   }
+  // Android & desktop: download the .vcf (tapping it opens "Add Contact").
   try{
     var blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});
     var url=URL.createObjectURL(blob);
     var a=document.createElement("a");
     a.href=url; a.download=fname;
     document.body.appendChild(a); a.click();
-    setTimeout(function(){a.remove(); URL.revokeObjectURL(url);},1500);
+    setTimeout(function(){a.remove(); URL.revokeObjectURL(url);},2000);
   }catch(e){
     window.location.href="data:text/vcard;charset=utf-8,"+encodeURIComponent(vcard);
   }
