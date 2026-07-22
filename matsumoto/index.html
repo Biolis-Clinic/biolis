@@ -207,6 +207,7 @@
   <div class="actions">
     <a class="act-event" href="https://biolis-clinic.github.io/biolis/event/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 8h14v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8z"/><path d="M3 8h18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2zM12 4v17"/></svg><span data-i="event">特別イベント</span><span class="ev-badge" data-i="evbadge">開催中</span></a>
     <div class="ref-row"><a class="act-referral" href="https://biolis-clinic.github.io/biolis/form/?r=matsumoto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-i="referral">ご紹介</span></a><button class="act-refcopy" onclick="copyRefLink(this)" data-url="https://biolis-clinic.github.io/biolis/form/?r=matsumoto"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span data-i="refcopy">リンクをコピー</span></button></div>
+    <div class="ref-row"><a class="act-referral" href="https://line.me/R/share?text=BiOLiS%20CLINIC%20%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%90%8D%E5%88%BA%0Ahttps%3A//biolis-clinic.github.io/biolis/matsumoto/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.5-.76L3 21l1.76-6A8.5 8.5 0 1 1 21 11.5z"/></svg><span data-i="shareline">LINEで送る</span></a><button class="act-refcopy" onclick="copyRefLink(this)" data-url="https://biolis-clinic.github.io/biolis/matsumoto/"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg><span data-i="cardcopy">名刺リンクをコピー</span></button></div>
     <a class="act" href="tel:+81362622677">
       <svg viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2.5-3-4.5-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4.5L4 5z"/></svg>
       <span data-i="call">電話</span></a>
@@ -277,15 +278,15 @@ const I = {
   ja:{call:"電話",email:"メール",line:"LINE予約",ig:"Instagram",map:"アクセス",web:"ウェブ",save:"連絡先を保存",
       title:`BiOLiS CLINIC アンバサダー`, tagline:"「未来の美と健康」をデザイン",
       foot:"〒103-0028 東京都中央区八重洲1-3-18 <span style='white-space:nowrap;'>VORT東京八重洲maxim 5F</span><br>受付 10:00–19:00 ／ 東京駅 八重洲北口 徒歩3分",
-      qrcap:"スキャンしてデジタル名刺を開く", qrlp:"画像を長押しすると写真に保存できます", qrsave:"QRを保存", qrhint:"タップで拡大", qrclose:"閉じる", flip:"タップで裏返す", docs:"医師紹介", event:"特別イベント", evbadge:"開催中", referral:"ご紹介", refcopy:"リンクをコピー", refcopied:"コピーしました", shttl:"ブラウザで開いてください", shtxt:"アプリ内ブラウザでは連絡先を保存できません。右上のメニューから「ブラウザで開く」（Safari / Chrome）を選んでから、もう一度お試しください。", shcopy:"リンクをコピー", shclose:"閉じる", nameMain:"松本 拓也", nameSub:"TAKUYA MATSUMOTO"},
+      qrcap:"スキャンしてデジタル名刺を開く", qrlp:"画像を長押しすると写真に保存できます", qrsave:"QRを保存", qrhint:"タップで拡大", qrclose:"閉じる", flip:"タップで裏返す", docs:"医師紹介", event:"特別イベント", evbadge:"開催中", referral:"ご紹介", refcopy:"リンクをコピー", refcopied:"コピーしました", shareline:"LINEで送る", cardcopy:"名刺リンクをコピー", shttl:"ブラウザで開いてください", shtxt:"アプリ内ブラウザでは連絡先を保存できません。右上のメニューから「ブラウザで開く」（Safari / Chrome）を選んでから、もう一度お試しください。", shcopy:"リンクをコピー", shclose:"閉じる", nameMain:"松本 拓也", nameSub:"TAKUYA MATSUMOTO"},
   ko:{call:"전화",email:"이메일",line:"LINE 예약",ig:"인스타그램",map:"오시는 길",web:"웹사이트",save:"연락처 저장",
       title:`BiOLiS CLINIC 앰배서더`, tagline:"「미래의 아름다움과 건강」을 디자인",
       foot:"도쿄도 주오구 야에스 1-3-18 <span style='white-space:nowrap;'>VORT東京八重洲maxim 5F</span><br>접수 10:00–19:00 ／ 도쿄역 야에스 북쪽출구 도보 3분",
-      qrcap:"스캔하여 디지털 명함 열기", qrlp:"이미지를 길게 누르면 사진에 저장됩니다", qrsave:"QR 저장", qrhint:"탭하여 확대", qrclose:"닫기", flip:"탭하여 뒤집기", docs:"의료진 소개", event:"특별 이벤트", evbadge:"진행중", referral:"소개하기", refcopy:"링크 복사", refcopied:"복사되었습니다", shttl:"브라우저에서 열어주세요", shtxt:"앱 내 브라우저에서는 연락처를 저장할 수 없습니다. 우측 상단 메뉴에서 '브라우저로 열기'(Safari / Chrome)를 선택한 후 다시 시도해 주세요.", shcopy:"링크 복사", shclose:"닫기", nameMain:"마츠모토 타쿠야", nameSub:"TAKUYA MATSUMOTO"},
+      qrcap:"스캔하여 디지털 명함 열기", qrlp:"이미지를 길게 누르면 사진에 저장됩니다", qrsave:"QR 저장", qrhint:"탭하여 확대", qrclose:"닫기", flip:"탭하여 뒤집기", docs:"의료진 소개", event:"특별 이벤트", evbadge:"진행중", referral:"소개하기", refcopy:"링크 복사", refcopied:"복사되었습니다", shareline:"LINE으로 보내기", cardcopy:"명함 링크 복사", shttl:"브라우저에서 열어주세요", shtxt:"앱 내 브라우저에서는 연락처를 저장할 수 없습니다. 우측 상단 메뉴에서 '브라우저로 열기'(Safari / Chrome)를 선택한 후 다시 시도해 주세요.", shcopy:"링크 복사", shclose:"닫기", nameMain:"마츠모토 타쿠야", nameSub:"TAKUYA MATSUMOTO"},
   en:{call:"Call",email:"Email",line:"LINE Reservation",ig:"Instagram",map:"Access",web:"Website",save:"Save Contact",
       title:`BiOLiS CLINIC Ambassador`, tagline:"Designing future beauty & health",
       foot:"<span style='white-space:nowrap'>VORT Yaesu maxim 5F, 1-3-18 Yaesu, Chuo-ku, Tokyo</span><br>Open 10:00–19:00 ／ 3 min from Tokyo Station",
-      qrcap:"Scan to open digital card", qrlp:"Press and hold the image to save to Photos", qrsave:"Save QR", qrhint:"Tap to enlarge", qrclose:"Close", flip:"Tap to flip", docs:"Our Doctors", event:"Special Event", evbadge:"NOW", referral:"Refer someone", refcopy:"Copy link", refcopied:"Copied!", shttl:"Please open in a browser", shtxt:"Contacts can't be saved in in-app browsers. Tap the menu (top-right) and choose 'Open in browser' (Safari / Chrome), then try again.", shcopy:"Copy link", shclose:"Close", nameMain:"Takuya Matsumoto", nameSub:"松本 拓也"}
+      qrcap:"Scan to open digital card", qrlp:"Press and hold the image to save to Photos", qrsave:"Save QR", qrhint:"Tap to enlarge", qrclose:"Close", flip:"Tap to flip", docs:"Our Doctors", event:"Special Event", evbadge:"NOW", referral:"Refer someone", refcopy:"Copy link", refcopied:"Copied!", shareline:"Share via LINE", cardcopy:"Copy my card", shttl:"Please open in a browser", shtxt:"Contacts can't be saved in in-app browsers. Tap the menu (top-right) and choose 'Open in browser' (Safari / Chrome), then try again.", shcopy:"Copy link", shclose:"Close", nameMain:"Takuya Matsumoto", nameSub:"松本 拓也"}
 };
 function setLang(l){
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
@@ -355,10 +356,11 @@ function copyRefLink(btn){
   var url=btn.getAttribute("data-url");
   var lang=document.documentElement.lang||"ja";
   var span=btn.querySelector("span");
+  var orig=span.textContent;
   function done(){
     btn.classList.add("copied");
     span.textContent=(I[lang]&&I[lang].refcopied)||"Copied!";
-    setTimeout(function(){btn.classList.remove("copied"); span.textContent=(I[lang]&&I[lang].refcopy)||"Copy link";},1800);
+    setTimeout(function(){btn.classList.remove("copied"); span.textContent=orig;},1800);
   }
   if(navigator.clipboard&&navigator.clipboard.writeText){
     navigator.clipboard.writeText(url).then(done).catch(function(){fallbackCopy(url,done);});
