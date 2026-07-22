@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Kim;Heechan;;;
+FN:Dr. Kim
+ORG:BiOLiS CLINIC
+TITLE:Skin-boosting Injections
+TEL;TYPE=CELL:+81-3-6262-2677
+EMAIL;TYPE=WORK:kim@biolisclinic.com
+URL:https://biolis-clinic.github.io/biolis/kim/
+ADR;TYPE=WORK:;;1-3-18 Yaesu VORT Tokyo Yaesu maxim 5F;Chuo-ku;Tokyo;103-0028;Japan
+X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/biolisclinic
+END:VCARD
