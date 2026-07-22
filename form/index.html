@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BiOLiS CLINIC ｜ フォームへ移動中…</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F4ED">
+<link rel="icon" type="image/png" href="https://biolis-clinic.github.io/biolis/assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<!-- ▼ 폼 주소가 바뀌면 아래 REDIRECT_URL 한 곳만 교체 -->
+<script>
+  const REDIRECT_URL = "https://forms.gle/ojG4K5byQ43qcZeRA";
+  setTimeout(function(){ window.location.replace(REDIRECT_URL); }, 900);
+</script>
+<style>
+  :root{--ink:#1C1A16;--ink-soft:#4A453C;--ivory:#F7F4ED;--gold:#B8944A;--gold-deep:#93752F;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP",sans-serif;background:var(--ivory);color:var(--ink);
+       display:flex;align-items:center;justify-content:center;min-height:100vh;}
+  .box{text-align:center;animation:fadein .6s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .emblem{width:76px;height:76px;margin:0 auto 18px;position:relative;}
+  .emblem .ring{position:absolute;inset:0;border:2px solid var(--gold);border-radius:50%;
+                border-top-color:transparent;animation:spin 1.1s linear infinite;}
+  .emblem img{position:absolute;inset:12px;width:52px;height:52px;border-radius:50%;object-fit:contain;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .brand{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;letter-spacing:.5px;}
+  .brand span{color:var(--gold);letter-spacing:4px;font-size:20px;}
+  .tl{font-size:9px;letter-spacing:.25em;color:#9a9a9a;text-transform:uppercase;margin-top:4px;}
+  .msg{font-size:12.5px;color:var(--ink-soft);margin-top:20px;line-height:1.8;}
+  a{color:var(--gold-deep);}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="emblem"><div class="ring"></div><img src="https://biolis-clinic.github.io/biolis/assets/icon-192.png" alt="BiOLiS CLINIC"></div>
+  <div class="brand">BiOLiS <span>CLINIC</span></div>
+  <div class="tl">Tokyo Yaesu · Regenerative Aesthetic</div>
+  <p class="msg">フォームへ移動しています…<br>
+     Redirecting to the form…<br>
+     폼으로 이동 중입니다…</p>
+  <p class="msg" style="font-size:11px;margin-top:12px;">
+     自動で移動しない場合は <a href="https://forms.gle/ojG4K5byQ43qcZeRA">こちら</a><br>
+     If it doesn't open, tap <a href="https://forms.gle/ojG4K5byQ43qcZeRA">here</a><br>
+     자동 이동이 안 되면 <a href="https://forms.gle/ojG4K5byQ43qcZeRA">여기</a>를 눌러주세요</p>
+</div>
+</body>
+</html>
