@@ -22,10 +22,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<!-- ▼ 폼 주소가 바뀌면 아래 REDIRECT_URL 한 곳만 교체 -->
+<!-- ▼ 폼 주소가 바뀌면 FORM_BASE / FORM_SHORT 교체. 소개자 추가는 REFS에 한 줄 추가 -->
 <script>
-  const REDIRECT_URL = "https://forms.gle/ojG4K5byQ43qcZeRA";
+  const FORM_SHORT = "https://forms.gle/ojG4K5byQ43qcZeRA";
+  const FORM_BASE  = "https://docs.google.com/forms/d/e/1FAIpQLSfCdmz2I7Igh3ryT723vsZ-66aFGm9JHq0qO1a-eNTFBMMdZg/viewform";
+  const ENTRY_REF  = "entry.1213050419";
+  const REFS = {
+    "patrick":   "パトリック・ノ",
+    "hirota":    "廣田 和久",
+    "matsumoto": "松本 拓也"
+  };
+  const code = new URLSearchParams(location.search).get("r");
+  const REDIRECT_URL = (code && REFS[code])
+    ? FORM_BASE + "?usp=pp_url&" + ENTRY_REF + "=" + encodeURIComponent(REFS[code])
+    : FORM_SHORT;
   setTimeout(function(){ window.location.replace(REDIRECT_URL); }, 900);
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("a[data-form]").forEach(a => a.href = REDIRECT_URL);
+  });
 </script>
 <style>
   :root{--ink:#1C1A16;--ink-soft:#4A453C;--ivory:#F7F4ED;--gold:#B8944A;--gold-deep:#93752F;}
@@ -55,9 +69,9 @@
      Redirecting to the form…<br>
      폼으로 이동 중입니다…</p>
   <p class="msg" style="font-size:11px;margin-top:12px;">
-     自動で移動しない場合は <a href="https://forms.gle/ojG4K5byQ43qcZeRA">こちら</a><br>
-     If it doesn't open, tap <a href="https://forms.gle/ojG4K5byQ43qcZeRA">here</a><br>
-     자동 이동이 안 되면 <a href="https://forms.gle/ojG4K5byQ43qcZeRA">여기</a>를 눌러주세요</p>
+     自動で移動しない場合は <a data-form href="https://forms.gle/ojG4K5byQ43qcZeRA">こちら</a><br>
+     If it doesn't open, tap <a data-form href="https://forms.gle/ojG4K5byQ43qcZeRA">here</a><br>
+     자동 이동이 안 되면 <a data-form href="https://forms.gle/ojG4K5byQ43qcZeRA">여기</a>를 눌러주세요</p>
 </div>
 </body>
 </html>
