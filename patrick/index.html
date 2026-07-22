@@ -101,6 +101,13 @@
   .act-event .ev-badge{position:relative; z-index:1; font-size:10.5px; font-weight:700; letter-spacing:.5px;
     background:rgba(255,255,255,.28); color:#fff; padding:3px 9px; border-radius:999px; margin-left:2px;}
   .actions .act-event{margin-bottom:4px;}
+  .act-referral{grid-column:1 / -1; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; gap:9px;
+    padding:14px; border-radius:14px; text-decoration:none; margin-bottom:4px;
+    background:#fff; border:1.5px solid var(--gold); color:var(--gold-dk);
+    box-shadow:0 6px 18px -10px rgba(176,141,69,.5);}
+  .act-referral:active{transform:scale(.99);}
+  .act-referral svg{width:19px; height:19px; stroke:var(--gold-dk); fill:none; stroke-width:1.8;}
+  .act-referral span{font:700 14px/1 "Noto Sans JP",sans-serif; letter-spacing:1px;}
 
   .save{margin:12px 22px 4px;}
   .save button,.save a{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;position:relative; overflow:hidden; width:100%; border:none; cursor:pointer; padding:16px; border-radius:14px;
@@ -188,6 +195,7 @@
 
   <div class="actions">
     <a class="act-event" href="https://biolis-clinic.github.io/biolis/event/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 8h14v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8z"/><path d="M3 8h18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2zM12 4v17"/></svg><span data-i="event">特別イベント</span><span class="ev-badge" data-i="evbadge">開催中</span></a>
+    <a class="act-referral" href="https://docs.google.com/forms/d/e/1FAIpQLSfCdmz2I7Igh3ryT723vsZ-66aFGm9JHq0qO1a-eNTFBMMdZg/viewform?usp=pp_url&entry.1213050419=%E3%83%91%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%83%BB%E3%83%8E" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-i="referral">ご紹介</span></a>
     <a class="act" href="tel:+817089090556">
       <svg viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2.5-3-4.5-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4.5L4 5z"/></svg>
       <span data-i="call">電話</span></a>
@@ -258,15 +266,15 @@ const I = {
   ja:{call:"電話",email:"メール",line:"LINE予約",ig:"Instagram",map:"アクセス",web:"ウェブ",save:"連絡先を保存",
       title:`グローバル事業開発（GBD）・広報`, tagline:"「未来の美と健康」をデザイン",
       foot:"〒103-0028 東京都中央区八重洲1-3-18 <span style='white-space:nowrap;'>VORT東京八重洲maxim 5F</span><br>受付 10:00–19:00 ／ 東京駅 八重洲北口 徒歩3分",
-      qrcap:"スキャンしてデジタル名刺を開く", qrlp:"画像を長押しすると写真に保存できます", qrsave:"QRを保存", qrhint:"タップで拡大", qrclose:"閉じる", flip:"タップで裏返す", docs:"医師紹介", event:"特別イベント", evbadge:"開催中", shttl:"ブラウザで開いてください", shtxt:"アプリ内ブラウザでは連絡先を保存できません。右上のメニューから「ブラウザで開く」（Safari / Chrome）を選んでから、もう一度お試しください。", shcopy:"リンクをコピー", shclose:"閉じる", nameMain:"パトリック・ノ", nameSub:"PATRICK NOH"},
+      qrcap:"スキャンしてデジタル名刺を開く", qrlp:"画像を長押しすると写真に保存できます", qrsave:"QRを保存", qrhint:"タップで拡大", qrclose:"閉じる", flip:"タップで裏返す", docs:"医師紹介", event:"特別イベント", evbadge:"開催中", referral:"ご紹介", shttl:"ブラウザで開いてください", shtxt:"アプリ内ブラウザでは連絡先を保存できません。右上のメニューから「ブラウザで開く」（Safari / Chrome）を選んでから、もう一度お試しください。", shcopy:"リンクをコピー", shclose:"閉じる", nameMain:"パトリック・ノ", nameSub:"PATRICK NOH"},
   ko:{call:"전화",email:"이메일",line:"LINE 예약",ig:"인스타그램",map:"오시는 길",web:"웹사이트",save:"연락처 저장",
       title:`글로벌 사업개발(GBD) · 홍보`, tagline:"「미래의 아름다움과 건강」을 디자인",
       foot:"도쿄도 주오구 야에스 1-3-18 <span style='white-space:nowrap;'>VORT東京八重洲maxim 5F</span><br>접수 10:00–19:00 ／ 도쿄역 야에스 북쪽출구 도보 3분",
-      qrcap:"스캔하여 디지털 명함 열기", qrlp:"이미지를 길게 누르면 사진에 저장됩니다", qrsave:"QR 저장", qrhint:"탭하여 확대", qrclose:"닫기", flip:"탭하여 뒤집기", docs:"의료진 소개", event:"특별 이벤트", evbadge:"진행중", shttl:"브라우저에서 열어주세요", shtxt:"앱 내 브라우저에서는 연락처를 저장할 수 없습니다. 우측 상단 메뉴에서 '브라우저로 열기'(Safari / Chrome)를 선택한 후 다시 시도해 주세요.", shcopy:"링크 복사", shclose:"닫기", nameMain:"노재봉", nameSub:"PATRICK NOH"},
+      qrcap:"스캔하여 디지털 명함 열기", qrlp:"이미지를 길게 누르면 사진에 저장됩니다", qrsave:"QR 저장", qrhint:"탭하여 확대", qrclose:"닫기", flip:"탭하여 뒤집기", docs:"의료진 소개", event:"특별 이벤트", evbadge:"진행중", referral:"소개하기", shttl:"브라우저에서 열어주세요", shtxt:"앱 내 브라우저에서는 연락처를 저장할 수 없습니다. 우측 상단 메뉴에서 '브라우저로 열기'(Safari / Chrome)를 선택한 후 다시 시도해 주세요.", shcopy:"링크 복사", shclose:"닫기", nameMain:"노재봉", nameSub:"PATRICK NOH"},
   en:{call:"Call",email:"Email",line:"LINE Reservation",ig:"Instagram",map:"Access",web:"Website",save:"Save Contact",
       title:`Global Business Development / PR`, tagline:"Designing future beauty & health",
       foot:"<span style='white-space:nowrap'>VORT Yaesu maxim 5F, 1-3-18 Yaesu, Chuo-ku, Tokyo</span><br>Open 10:00–19:00 ／ 3 min from Tokyo Station",
-      qrcap:"Scan to open digital card", qrlp:"Press and hold the image to save to Photos", qrsave:"Save QR", qrhint:"Tap to enlarge", qrclose:"Close", flip:"Tap to flip", docs:"Our Doctors", event:"Special Event", evbadge:"NOW", shttl:"Please open in a browser", shtxt:"Contacts can't be saved in in-app browsers. Tap the menu (top-right) and choose 'Open in browser' (Safari / Chrome), then try again.", shcopy:"Copy link", shclose:"Close", nameMain:"Patrick Noh", nameSub:"パトリック・ノ"}
+      qrcap:"Scan to open digital card", qrlp:"Press and hold the image to save to Photos", qrsave:"Save QR", qrhint:"Tap to enlarge", qrclose:"Close", flip:"Tap to flip", docs:"Our Doctors", event:"Special Event", evbadge:"NOW", referral:"Refer someone", shttl:"Please open in a browser", shtxt:"Contacts can't be saved in in-app browsers. Tap the menu (top-right) and choose 'Open in browser' (Safari / Chrome), then try again.", shcopy:"Copy link", shclose:"Close", nameMain:"Patrick Noh", nameSub:"パトリック・ノ"}
 };
 function setLang(l){
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
