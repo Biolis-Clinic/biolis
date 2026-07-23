@@ -2,6 +2,11 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TD03G8G4Q"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-0TD03G8G4Q');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Patrick Noh · BiOLiS CLINIC</title>
 <meta name="description" content="Patrick Noh · Global Business Development / PR · BiOLiS CLINIC — iPS再生医療×美容医療クリニック（東京・八重洲）">
@@ -141,7 +146,8 @@
   @keyframes sweepBtn{0%,55%{left:-60%;} 85%{left:120%;} 100%{left:120%;}}
   .save button:active,.save a:active{transform:scale(.99);} .save button svg,.save a svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.8;}
   .save.navy a{background:linear-gradient(100deg,#22456E,#3A6494 45%,#2F567F 55%,#1C3A5E);
-    box-shadow:0 8px 22px -8px rgba(28,58,94,.62);}
+    box-shadow:0 8px 22px -8px rgba(28,58,94,.62); border:1px solid rgba(216,190,134,.85);}
+  .save.navy a svg{stroke:#E8C87A;}
 
   .qr{padding:14px 22px 6px; text-align:center;}
   .qr-inner{display:inline-flex; flex-direction:column; align-items:center; gap:9px;
@@ -414,6 +420,14 @@ function downloadQR(){
   a.href=document.getElementById("qrimg").src; a.download="BiOLiS_QR_Patrick Noh.png";
   document.body.appendChild(a); a.click(); a.remove();
 }
+</script>
+<script>
+document.addEventListener("click",function(e){
+  var el=e.target.closest("a,button");if(!el)return;
+  var di=el.querySelector("[data-i]");
+  var key=(di&&di.getAttribute("data-i"))||el.getAttribute("data-i")||(el.className&&String(el.className).split(" ")[0])||"unknown";
+  try{gtag("event","card_click",{card:"patrick",item:String(key).slice(0,40)});}catch(_){}
+},true);
 </script>
 </body>
 </html>
