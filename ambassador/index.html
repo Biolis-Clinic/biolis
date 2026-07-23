@@ -45,8 +45,8 @@
         display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;}
   .hero-slides{position:absolute;inset:0;z-index:0;}
   .hero-slide{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;
-              opacity:0;transform:scale(1.08);transition:opacity 2.4s ease-in-out;}
-  .hero-slide.on{opacity:1;transform:scale(1);transition:opacity 2.4s ease-in-out, transform 9s linear;}
+              opacity:0;transform:scale(1);transition:opacity 2.6s ease-in-out, transform 0s linear 2.6s;}
+  .hero-slide.on{opacity:1;transform:scale(1.07);transition:opacity 2.6s ease-in-out, transform 11s linear;}
   .hero-veil{position:absolute;inset:0;z-index:1;background:
         radial-gradient(1100px 600px at 50% 100%, rgba(184,148,74,.22), transparent 60%),
         linear-gradient(165deg, rgba(62,50,30,.34) 0%, rgba(46,38,24,.52) 55%, rgba(38,31,20,.62) 100%);}
@@ -85,6 +85,9 @@
   .lead b{color:var(--ink);}
   .reveal{opacity:0;transform:translateY(28px);transition:all .9s cubic-bezier(.22,.61,.36,1);}
   .reveal.on{opacity:1;transform:none;}
+  .hero .jp span,.sec-title span{display:inline-block;}
+  .lead,.fine,.tier li,.card p{word-break:keep-all;overflow-wrap:anywhere;}
+  @media(max-width:640px){br.pc{display:none;}}
 
   /* ===== PROGRAM CARDS ===== */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:56px;}
@@ -198,7 +201,7 @@
       </svg>
     </div>
     <h1>BiOLiS<br><b>AMBASSADOR</b></h1>
-    <div class="jp">あなたの紹介が、大切な人の美と健康につながる。</div>
+    <div class="jp"><span>あなたの紹介が、</span><span>大切な人の美と健康につながる。</span></div>
     <div class="sub">BiOLiS CLINIC ｜ TOKYO YAESU ｜ 日本語 · English · 한국어</div>
     <div class="cta-row">
       <a class="btn-gold" href="https://forms.gle/pVVibCoWdVyTpdyHA" target="_blank" rel="noopener">アンバサダーに応募する</a>
@@ -212,13 +215,13 @@
 <section id="about">
   <div class="wrap reveal">
     <div class="sec-label">About</div>
-    <h2 class="sec-title">アンバサダープログラムとは</h2>
+    <h2 class="sec-title"><span>アンバサダー</span><span>プログラムとは</span></h2>
     <div class="sec-rule"></div>
     <p class="lead">
-      BiOLiS CLINICは、東京・八重洲に位置する<b>再生医療×美容医療クリニック</b>です。<br>
+      BiOLiS CLINICは、東京・八重洲に位置する<b>再生医療×美容医療クリニック</b>です。<br class="pc">
       本プログラムは、BiOLiSを信頼してくださるお客様や
-      パートナーの皆様が、<b>ご自身の言葉で大切な方へBiOLiSを紹介できる</b>公式制度です。<br>
-      専用のデジタル紹介リンクとQRを発行し、ご紹介の成果に応じた特典をご用意。<br>
+      パートナーの皆様が、<b>ご自身の言葉で大切な方へBiOLiSを紹介できる</b>公式制度です。<br class="pc">
+      専用のデジタル紹介リンクとQRを発行し、ご紹介の成果に応じた特典をご用意。<br class="pc">
       広告ではなく、<b>信頼のつながり</b>で広がるクリニックを目指します。
     </p>
   </div>
@@ -265,7 +268,7 @@
     <div class="sec-label">Rewards</div>
     <h2 class="sec-title">特典・等級</h2>
     <div class="sec-rule"></div>
-    <p class="lead">ご紹介いただいた方が施術を受けられると、決済額に応じた特典を進呈します。<br>ご紹介された方にも初回特典があり、双方にメリットのある設計です。</p>
+    <p class="lead">ご紹介いただいた方が施術を受けられると、決済額に応じた特典を進呈します。<br class="pc">ご紹介された方にも初回特典があり、双方にメリットのある設計です。</p>
     <div class="tiers">
       <div class="tier">
         <div class="tname">MEMBER</div>
@@ -296,8 +299,8 @@
       </div>
     </div>
     <p class="fine">
-      ※ ご紹介された方には初回施術5％割引をご用意しています。<br>
-      ※ 院内クレジットの有効期限は12ヶ月です。現金化・譲渡はできず、商品は院内でのお受け取りとなります。対象は自由診療のみです。<br>
+      ※ ご紹介された方には初回施術5％割引をご用意しています。<br class="pc">
+      ※ 院内クレジットの有効期限は12ヶ月です。現金化・譲渡はできず、商品は院内でのお受け取りとなります。対象は自由診療のみです。<br class="pc">
       ※ 特典内容・還元率は、制度の正式開始時に変更となる場合があります。
     </p>
   </div>
@@ -338,7 +341,7 @@
 <section id="clinic" style="background:#fff;">
   <div class="wrap reveal">
     <div class="sec-label">Clinic</div>
-    <h2 class="sec-title">最高品質の空間で、お迎えします</h2>
+    <h2 class="sec-title"><span>最高品質の空間で、</span><span>お迎えします</span></h2>
     <div class="sec-rule"></div>
     <p class="lead">ご紹介いただいた大切な方を、東京駅徒歩3分・八重洲の洗練された空間でお迎えします。</p>
     <div class="gal">
@@ -384,11 +387,11 @@
 <section id="contact" class="cta-sec">
   <div class="wrap reveal">
     <div class="sec-label">Contact</div>
-    <h2 class="sec-title">アンバサダーに応募する</h2>
+    <h2 class="sec-title"><span>アンバサダーに</span><span>応募する</span></h2>
     <div class="sec-rule"></div>
     <div class="cta-box" style="margin-top:52px;">
       <h3>応募フォームからご登録ください</h3>
-      <p>日本語・英語・韓国語に対応した応募フォームをご用意しています（約1分で完了）。<br>ご登録後、担当者よりプログラムの詳細と専用リンクの発行についてご案内いたします。<br>ご質問はLINE・Instagram DMでもお気軽にどうぞ。</p>
+      <p>日本語・英語・韓国語に対応した応募フォームをご用意しています（約1分で完了）。<br class="pc">ご登録後、担当者よりプログラムの詳細と専用リンクの発行についてご案内いたします。<br class="pc">ご質問はLINE・Instagram DMでもお気軽にどうぞ。</p>
       <div class="cta-row">
         <a class="btn-gold" href="https://forms.gle/pVVibCoWdVyTpdyHA" target="_blank" rel="noopener">応募フォームへ</a>
         <a class="btn-dark" href="https://lin.ee/QX9Yiqv" target="_blank" rel="noopener">LINEで相談</a>
@@ -431,7 +434,7 @@
       slides[cur].classList.remove("on"); dots[cur].classList.remove("on");
       cur = (cur + 1) % slides.length;
       slides[cur].classList.add("on"); dots[cur].classList.add("on");
-    }, 5200);
+    }, 6200);
   })();
 </script>
 </body>
