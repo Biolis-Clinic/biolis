@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BiOLiS AMBASSADOR PROGRAM ｜ BiOLiS CLINIC 東京八重洲</title>
+<meta name="description" content="BiOLiS CLINICのアンバサダープログラム。あなたの紹介が、大切な人の美と健康につながる。東京駅徒歩3分・再生医療×美容医療クリニック。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BiOLiS AMBASSADOR PROGRAM">
+<meta property="og:description" content="あなたの紹介が、大切な人の美と健康につながる。BiOLiS CLINIC アンバサダープログラム">
+<meta property="og:image" content="https://biolis-clinic.github.io/biolis/form/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="https://biolis-clinic.github.io/biolis/assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1A16; --ink-soft:#4A453C; --ivory:#F7F4ED; --ivory-2:#FBF9F4;
+    --gold:#B8944A; --gold-deep:#93752F; --gold-light:#E8C87A;
+    --line:#E4DCCA; --panel:#211E18; --panel-2:#2C281F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Noto Sans JP",sans-serif;background:var(--ivory);color:var(--ink);-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ===== NAV ===== */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+      padding:16px 28px;background:rgba(33,30,24,.92);backdrop-filter:blur(8px);}
+  .nv-brand{font-family:"Cormorant Garamond",serif;font-size:20px;color:#fff;letter-spacing:.5px;}
+  .nv-brand span{color:var(--gold-light);letter-spacing:3px;font-size:15px;}
+  .nv-links{display:flex;gap:26px;align-items:center;}
+  .nv-links a{font-size:12px;letter-spacing:.18em;color:#D8D2C4;text-transform:uppercase;}
+  .nv-links a:hover{color:var(--gold-light);}
+  .nv-cta{background:linear-gradient(100deg,#B79350,#D8BE86 45%,#C4A461 55%,#A9863E);color:#fff !important;
+          padding:10px 22px;border-radius:100px;font-weight:700;letter-spacing:.12em;}
+  @media(max-width:760px){.nv-links a:not(.nv-cta){display:none;}}
+
+  /* ===== HERO ===== */
+  .hero{min-height:100svh;background:
+        linear-gradient(rgba(33,30,24,.72), rgba(33,30,24,.86)),
+        url("img/interior_1.jpg") center/cover no-repeat,
+        var(--panel);
+        display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;}
+  .hero-inner{padding:120px 24px 90px;position:relative;z-index:2;}
+  .hero .emblem{width:92px;height:92px;margin:0 auto 30px;opacity:.95;animation:fadeUp 1.2s ease both;}
+  .hero .emblem svg{width:100%;height:100%;}
+  .hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;color:#fff;
+           font-size:clamp(40px,7vw,84px);letter-spacing:.08em;line-height:1.05;animation:fadeUp 1.2s .15s ease both;}
+  .hero h1 b{color:var(--gold-light);font-weight:600;}
+  .hero .jp{font-family:"Noto Serif JP",serif;color:#EDE6D4;font-size:clamp(15px,2.4vw,22px);
+            margin-top:26px;letter-spacing:.3em;animation:fadeUp 1.2s .3s ease both;}
+  .hero .sub{color:#9a8f78;font-size:12.5px;letter-spacing:.2em;margin-top:16px;animation:fadeUp 1.2s .45s ease both;}
+  .hero .cta-row{margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1.2s .6s ease both;}
+  .btn-gold{display:inline-block;background:linear-gradient(100deg,#B79350,#D8BE86 45%,#C4A461 55%,#A9863E);
+            color:#fff;padding:16px 42px;border-radius:100px;font-weight:700;letter-spacing:.14em;font-size:14px;
+            box-shadow:0 12px 30px -12px rgba(184,148,74,.6);}
+  .btn-line{display:inline-block;background:transparent;border:1.5px solid var(--gold);color:var(--gold-light);
+            padding:16px 42px;border-radius:100px;font-weight:500;letter-spacing:.14em;font-size:14px;}
+  .hero .scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#9a8f78;font-size:10px;
+                letter-spacing:.3em;animation:bob 2s ease-in-out infinite;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+  /* ===== SECTION COMMON ===== */
+  section{padding:110px 24px;}
+  .wrap{max-width:1060px;margin:0 auto;}
+  .sec-label{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:15px;letter-spacing:.42em;
+             text-transform:uppercase;text-align:center;}
+  .sec-title{font-family:"Noto Serif JP",serif;font-size:clamp(24px,4vw,36px);font-weight:600;text-align:center;
+             margin-top:14px;letter-spacing:.06em;}
+  .sec-rule{width:56px;height:2px;background:var(--gold);margin:26px auto 0;}
+  .lead{max-width:720px;margin:36px auto 0;font-size:15px;line-height:2.2;color:var(--ink-soft);text-align:center;}
+  .lead b{color:var(--ink);}
+  .reveal{opacity:0;transform:translateY(28px);transition:all .9s cubic-bezier(.22,.61,.36,1);}
+  .reveal.on{opacity:1;transform:none;}
+
+  /* ===== PROGRAM CARDS ===== */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:56px;}
+  .card{background:#fff;border:1px solid var(--line);padding:38px 26px;text-align:center;position:relative;}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+                background:linear-gradient(90deg,#B79350,#D8BE86 45%,#C4A461 55%,#A9863E);}
+  .card .en{font-family:"Cormorant Garamond",serif;font-size:19px;letter-spacing:.24em;color:var(--gold-deep);}
+  .card h3{font-family:"Noto Serif JP",serif;font-size:16px;font-weight:600;margin-top:10px;}
+  .card p{font-size:13px;color:var(--ink-soft);line-height:1.95;margin-top:14px;text-align:left;}
+  .card .num{font-family:"Cormorant Garamond",serif;font-size:44px;color:rgba(184,148,74,.22);
+             position:absolute;top:12px;right:16px;line-height:1;}
+
+  /* ===== REWARDS ===== */
+  .dark{background:
+        radial-gradient(900px 500px at 90% 0%, rgba(184,148,74,.16), transparent 55%), var(--panel);}
+  .dark .sec-title{color:#fff;}
+  .dark .lead{color:#C9C2B2;}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:56px;}
+  .tier{background:var(--panel-2);border:1px solid rgba(184,148,74,.35);padding:40px 28px;text-align:center;color:#EDE6D4;}
+  .tier.hot{border:1.5px solid var(--gold);background:linear-gradient(180deg,rgba(184,148,74,.14),rgba(184,148,74,.03));}
+  .tier .tname{font-family:"Cormorant Garamond",serif;font-size:22px;letter-spacing:.26em;color:var(--gold-light);}
+  .tier .cond{font-size:11.5px;color:#9a8f78;margin-top:8px;letter-spacing:.1em;}
+  .tier .val{font-family:"Noto Serif JP",serif;font-size:clamp(28px,4vw,38px);font-weight:600;color:#fff;margin-top:22px;}
+  .tier .val small{font-size:14px;color:var(--gold-light);}
+  .tier ul{list-style:none;margin-top:22px;text-align:left;}
+  .tier li{font-size:12.5px;color:#C9C2B2;line-height:1.8;padding:4px 0 4px 0;display:flex;gap:8px;}
+  .tier li::before{content:"—";color:var(--gold);flex-shrink:0;}
+  .fine{font-size:11px;color:#8b8271;text-align:center;margin-top:34px;line-height:1.9;letter-spacing:.04em;}
+
+  /* ===== FLOW ===== */
+  .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;margin-top:60px;counter-reset:step;}
+  .step{padding:10px 26px 0;text-align:center;position:relative;}
+  .step:not(:last-child)::after{content:"";position:absolute;top:34px;right:-14px;width:28px;height:1.5px;background:var(--gold);}
+  @media(max-width:900px){.step:not(:last-child)::after{display:none;}}
+  .step .dot{width:68px;height:68px;border:1.5px solid var(--gold);border-radius:50%;margin:0 auto;
+             display:flex;align-items:center;justify-content:center;background:#fff;
+             font-family:"Cormorant Garamond",serif;font-size:26px;color:var(--gold-deep);}
+  .step h4{font-family:"Noto Serif JP",serif;font-size:15px;font-weight:600;margin-top:18px;}
+  .step p{font-size:12.5px;color:var(--ink-soft);line-height:1.9;margin-top:10px;}
+
+  /* ===== GALLERY ===== */
+  .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:56px;}
+  .gal figure{position:relative;overflow:hidden;}
+  .gal img{width:100%;height:260px;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.22,.61,.36,1);}
+  .gal figure:hover img{transform:scale(1.06);}
+  .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;
+    background:linear-gradient(transparent, rgba(33,30,24,.85));color:#EDE6D4;
+    font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:.3em;}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:760px;margin:52px auto 0;}
+  details{background:#fff;border:1px solid var(--line);margin-bottom:12px;}
+  summary{cursor:pointer;padding:20px 24px;font-family:"Noto Serif JP",serif;font-size:14.5px;font-weight:600;
+          list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;}
+  summary::after{content:"＋";color:var(--gold);font-size:18px;flex-shrink:0;}
+  details[open] summary::after{content:"－";}
+  details p{padding:0 24px 22px;font-size:13.5px;color:var(--ink-soft);line-height:2;}
+
+  /* ===== CTA ===== */
+  .cta-sec{text-align:center;}
+  .cta-box{max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--line);padding:56px 34px;position:relative;}
+  .cta-box::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+                background:linear-gradient(90deg,#B79350,#D8BE86 45%,#C4A461 55%,#A9863E);}
+  .cta-box h3{font-family:"Noto Serif JP",serif;font-size:22px;font-weight:600;}
+  .cta-box p{font-size:13.5px;color:var(--ink-soft);line-height:2;margin-top:16px;}
+  .cta-box .cta-row{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn-dark{display:inline-block;background:var(--panel);color:#EDE6D4;padding:16px 38px;border-radius:100px;
+            font-weight:500;letter-spacing:.12em;font-size:13.5px;border:1px solid var(--panel);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--panel);color:#9a8f78;padding:60px 24px 40px;text-align:center;}
+  footer .fbrand{font-family:"Cormorant Garamond",serif;font-size:24px;color:#fff;}
+  footer .fbrand span{color:var(--gold-light);letter-spacing:3px;font-size:18px;}
+  footer .addr{font-size:12px;line-height:2;margin-top:18px;letter-spacing:.06em;}
+  footer .links{margin-top:22px;display:flex;gap:22px;justify-content:center;font-size:11.5px;letter-spacing:.12em;}
+  footer .links a:hover{color:var(--gold-light);}
+  footer .copy{margin-top:34px;font-size:10.5px;letter-spacing:.1em;color:#6d6555;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nv-brand" href="#top">BiOLiS <span>AMBASSADOR</span></a>
+  <div class="nv-links">
+    <a href="#about">About</a>
+    <a href="#program">Program</a>
+    <a href="#rewards">Rewards</a>
+    <a href="#flow">Flow</a>
+    <a href="#faq">FAQ</a>
+    <a class="nv-cta" href="#contact">応募する</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="emblem">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#D8BE86" stroke-width="1.6">
+        <circle cx="50" cy="30" r="17"/><circle cx="30" cy="50" r="17"/>
+        <circle cx="70" cy="50" r="17"/><circle cx="50" cy="70" r="17"/>
+        <line x1="10" y1="50" x2="90" y2="50" stroke-width="3.4"/>
+      </svg>
+    </div>
+    <h1>BiOLiS<br><b>AMBASSADOR</b></h1>
+    <div class="jp">あなたの紹介が、大切な人の美と健康につながる。</div>
+    <div class="sub">BiOLiS CLINIC ｜ TOKYO YAESU ｜ 日本語 · English · 한국어</div>
+    <div class="cta-row">
+      <a class="btn-gold" href="https://forms.gle/pVVibCoWdVyTpdyHA" target="_blank" rel="noopener">アンバサダーに応募する</a>
+      <a class="btn-line" href="#program">プログラムを見る</a>
+    </div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap reveal">
+    <div class="sec-label">About</div>
+    <h2 class="sec-title">アンバサダープログラムとは</h2>
+    <div class="sec-rule"></div>
+    <p class="lead">
+      BiOLiS CLINICは、東京・八重洲に位置する<b>再生医療×美容医療クリニック</b>です。<br>
+      本プログラムは、BiOLiSを信頼してくださるお客様や
+      パートナーの皆様が、<b>ご自身の言葉で大切な方へBiOLiSを紹介できる</b>公式制度です。<br>
+      専用のデジタル紹介リンクとQRを発行し、ご紹介の成果に応じた特典をご用意。<br>
+      広告ではなく、<b>信頼のつながり</b>で広がるクリニックを目指します。
+    </p>
+  </div>
+</section>
+
+<!-- ================= PROGRAM ================= -->
+<section id="program" style="background:var(--ivory-2);padding-top:100px;">
+  <div class="wrap reveal">
+    <div class="sec-label">Program</div>
+    <h2 class="sec-title">プログラムの特徴</h2>
+    <div class="sec-rule"></div>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01</div>
+        <div class="en">REFERRAL</div>
+        <h3>専用リンクで簡単紹介</h3>
+        <p>あなた専用の紹介リンク・QRコードを発行。LINEで送るだけで、紹介者名が自動入力されたフォームに届き、紹介が完結します。</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <div class="en">REWARDS</div>
+        <h3>成果に応じた特典</h3>
+        <p>ご紹介の成約ごとに、施術やクリニック商品に使える院内クレジットを進呈。実績を重ねた方は公式アンバサダーへ。</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <div class="en">DIGITAL CARD</div>
+        <h3>デジタル名刺</h3>
+        <p>公式アンバサダーには専用デザインのデジタル名刺を発行。ホーム画面に追加すれば、アプリのようにワンタップで紹介できます。</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <div class="en">GLOBAL</div>
+        <h3>3言語対応</h3>
+        <p>紹介ページ・フォームは日本語・英語・韓国語に対応。国内のご友人はもちろん、海外にお住まいの方のご紹介もそのまま可能です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REWARDS ================= -->
+<section id="rewards" class="dark">
+  <div class="wrap reveal">
+    <div class="sec-label">Rewards</div>
+    <h2 class="sec-title">特典・等級</h2>
+    <div class="sec-rule"></div>
+    <p class="lead">ご紹介いただいた方が施術を受けられると、決済額に応じた特典を進呈します。<br>ご紹介された方にも初回特典があり、双方にメリットのある設計です。</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tname">MEMBER</div>
+        <div class="cond">ご紹介成約 1件〜</div>
+        <div class="val">3<small>％相当</small></div>
+        <ul>
+          <li>院内クレジット進呈（施術・院内商品に利用可）</li>
+          <li>有効期限12ヶ月</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tname">SILVER</div>
+        <div class="cond">ご紹介成約 5件〜</div>
+        <div class="val">4<small>％相当</small></div>
+        <ul>
+          <li>院内クレジット進呈</li>
+          <li>新メニューの先行案内</li>
+        </ul>
+      </div>
+      <div class="tier hot">
+        <div class="tname">OFFICIAL</div>
+        <div class="cond">ご紹介成約 10件〜 · 面談認定</div>
+        <div class="val">5<small>％（現金報酬）</small></div>
+        <ul>
+          <li>業務委託契約にもとづく現金報酬</li>
+          <li>専用デザインのデジタル名刺</li>
+          <li>限定イベントへのご招待</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      ※ ご紹介された方には初回施術5％割引をご用意しています。<br>
+      ※ クレジットは現金化・譲渡不可、商品は院内でのお受け取りとなります。対象は自由診療のみです。<br>
+      ※ 特典内容・還元率は、制度の正式開始時に変更となる場合があります。
+    </p>
+  </div>
+</section>
+
+<!-- ================= FLOW ================= -->
+<section id="flow">
+  <div class="wrap reveal">
+    <div class="sec-label">Flow</div>
+    <h2 class="sec-title">ご参加の流れ</h2>
+    <div class="sec-rule"></div>
+    <div class="flow">
+      <div class="step">
+        <div class="dot">1</div>
+        <h4>応募・登録</h4>
+        <p>LINEまたはInstagram DMから「アンバサダー希望」とご連絡ください。</p>
+      </div>
+      <div class="step">
+        <div class="dot">2</div>
+        <h4>専用リンク発行</h4>
+        <p>あなた専用の紹介リンク・QRコードをお渡しします。</p>
+      </div>
+      <div class="step">
+        <div class="dot">3</div>
+        <h4>ご紹介</h4>
+        <p>LINEなどでリンクを送るだけ。紹介者名は自動入力されます。</p>
+      </div>
+      <div class="step">
+        <div class="dot">4</div>
+        <h4>特典進呈</h4>
+        <p>ご紹介の方の施術完了後、月末に特典を集計してご案内します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLINIC ================= -->
+<section id="clinic" style="background:#fff;">
+  <div class="wrap reveal">
+    <div class="sec-label">Clinic</div>
+    <h2 class="sec-title">最高品質の空間で、お迎えします</h2>
+    <div class="sec-rule"></div>
+    <p class="lead">ご紹介いただいた大切な方を、東京駅徒歩3分・八重洲の洗練された空間でお迎えします。</p>
+    <div class="gal">
+      <figure><img src="img/interior_1.jpg" alt="BiOLiS CLINIC Reception" loading="lazy"><figcaption>RECEPTION</figcaption></figure>
+      <figure><img src="img/interior_2.jpg" alt="BiOLiS CLINIC Corridor" loading="lazy"><figcaption>CLINIC FLOOR</figcaption></figure>
+      <figure><img src="img/interior_3.jpg" alt="BiOLiS CLINIC Lounge" loading="lazy"><figcaption>LOUNGE</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" style="background:var(--ivory-2);">
+  <div class="wrap reveal">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">よくあるご質問</h2>
+    <div class="sec-rule"></div>
+    <div class="faq">
+      <details>
+        <summary>誰でも参加できますか？</summary>
+        <p>BiOLiS CLINICをご利用いただいたことのあるお客様、およびクリニックが認定するパートナーの方を対象としています。まずはお気軽にお問い合わせください。</p>
+      </details>
+      <details>
+        <summary>費用はかかりますか？</summary>
+        <p>参加費・年会費などは一切かかりません。</p>
+      </details>
+      <details>
+        <summary>SNSで紹介してもいいですか？</summary>
+        <p>はい。ただし医療広告に関する法令・ガイドラインを守っていただくため、投稿ルール（体験談・効果保証表現の禁止、対価を伴う投稿への「#PR」表記など）を行動規範としてお渡しします。ご登録時にご確認ください。</p>
+      </details>
+      <details>
+        <summary>特典はいつ受け取れますか？</summary>
+        <p>ご紹介された方の施術・お会計が完了した後、月末に集計し、翌月にLINEでご案内します。クレジットは次回のご来院からご利用いただけます。</p>
+      </details>
+      <details>
+        <summary>海外に住んでいる友人を紹介できますか？</summary>
+        <p>可能です。紹介ページ・フォームは日本語・英語・韓国語に対応しており、訪日のご予定に合わせてクリニックが直接ご案内します。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="cta-sec">
+  <div class="wrap reveal">
+    <div class="sec-label">Contact</div>
+    <h2 class="sec-title">アンバサダーに応募する</h2>
+    <div class="sec-rule"></div>
+    <div class="cta-box" style="margin-top:52px;">
+      <h3>応募フォームからご登録ください</h3>
+      <p>日本語・英語・韓国語に対応した応募フォームをご用意しています（約1分で完了）。<br>ご登録後、担当者よりプログラムの詳細と専用リンクの発行についてご案内いたします。<br>ご質問はLINE・Instagram DMでもお気軽にどうぞ。</p>
+      <div class="cta-row">
+        <a class="btn-gold" href="https://forms.gle/pVVibCoWdVyTpdyHA" target="_blank" rel="noopener">応募フォームへ</a>
+        <a class="btn-dark" href="https://lin.ee/QX9Yiqv" target="_blank" rel="noopener">LINEで相談</a>
+        <a class="btn-dark" href="https://instagram.com/biolisclinic" target="_blank" rel="noopener">Instagram DM</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="fbrand">BiOLiS <span>CLINIC</span></div>
+  <div class="addr">
+    〒103-0028 東京都中央区八重洲1-3-18 VORT東京八重洲maxim 5F<br>
+    受付 10:00–19:00 ｜ 東京駅 八重洲北口 徒歩3分 · 日本橋駅 徒歩2分
+  </div>
+  <div class="links">
+    <a href="https://biolisclinic.com" target="_blank" rel="noopener">OFFICIAL SITE</a>
+    <a href="https://instagram.com/biolisclinic" target="_blank" rel="noopener">INSTAGRAM</a>
+    <a href="https://lin.ee/QX9Yiqv" target="_blank" rel="noopener">LINE</a>
+  </div>
+  <div class="copy">© BiOLiS CLINIC All Rights Reserved.</div>
+</footer>
+
+<script>
+  // 스크롤 리빌
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
