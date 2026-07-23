@@ -20,7 +20,7 @@
   :root{
     --ink:#1C1A16; --ink-soft:#4A453C; --ivory:#F7F4ED; --ivory-2:#FBF9F4;
     --gold:#B8944A; --gold-deep:#93752F; --gold-light:#E8C87A;
-    --line:#E4DCCA; --panel:#211E18; --panel-2:#2C281F;
+    --line:#E4DCCA; --panel:#2E2618; --panel-2:#3A3122;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -30,7 +30,7 @@
 
   /* ===== NAV ===== */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-      padding:16px 28px;background:rgba(33,30,24,.92);backdrop-filter:blur(8px);}
+      padding:16px 28px;background:rgba(46,38,24,.9);backdrop-filter:blur(8px);}
   .nv-brand{font-family:"Cormorant Garamond",serif;font-size:20px;color:#fff;letter-spacing:.5px;}
   .nv-brand span{color:var(--gold-light);letter-spacing:3px;font-size:15px;}
   .nv-links{display:flex;gap:26px;align-items:center;}
@@ -40,12 +40,19 @@
           padding:10px 22px;border-radius:100px;font-weight:700;letter-spacing:.12em;}
   @media(max-width:760px){.nv-links a:not(.nv-cta){display:none;}}
 
-  /* ===== HERO ===== */
-  .hero{min-height:100svh;background:
-        linear-gradient(rgba(33,30,24,.72), rgba(33,30,24,.86)),
-        url("img/interior_1.jpg") center/cover no-repeat,
-        var(--panel);
+  /* ===== HERO (5-slide crossfade) ===== */
+  .hero{min-height:100svh;background:var(--panel);
         display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;}
+  .hero-slides{position:absolute;inset:0;z-index:0;}
+  .hero-slide{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;
+              opacity:0;transform:scale(1.08);transition:opacity 2.4s ease-in-out;}
+  .hero-slide.on{opacity:1;transform:scale(1);transition:opacity 2.4s ease-in-out, transform 9s linear;}
+  .hero-veil{position:absolute;inset:0;z-index:1;background:
+        radial-gradient(1100px 600px at 50% 100%, rgba(184,148,74,.22), transparent 60%),
+        linear-gradient(165deg, rgba(62,50,30,.34) 0%, rgba(46,38,24,.52) 55%, rgba(38,31,20,.62) 100%);}
+  .hero-dots{position:absolute;bottom:64px;left:50%;transform:translateX(-50%);z-index:2;display:flex;gap:10px;}
+  .hero-dots i{width:7px;height:7px;border-radius:50%;background:rgba(237,230,212,.4);transition:all .5s;}
+  .hero-dots i.on{background:var(--gold-light);transform:scale(1.25);}
   .hero-inner{padding:120px 24px 90px;position:relative;z-index:2;}
   .hero .emblem{width:92px;height:92px;margin:0 auto 30px;opacity:.95;animation:fadeUp 1.2s ease both;}
   .hero .emblem svg{width:100%;height:100%;}
@@ -92,7 +99,7 @@
 
   /* ===== REWARDS ===== */
   .dark{background:
-        radial-gradient(900px 500px at 90% 0%, rgba(184,148,74,.16), transparent 55%), var(--panel);}
+        radial-gradient(900px 500px at 90% 0%, rgba(216,190,134,.20), transparent 55%), var(--panel);}
   .dark .sec-title{color:#fff;}
   .dark .lead{color:#C9C2B2;}
   .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:56px;}
@@ -173,6 +180,15 @@
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide on" style="background-image:url('img/hero_1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('img/hero_2.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('img/hero_3.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('img/hero_4.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('img/hero_5.jpg')"></div>
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
   <div class="hero-inner">
     <div class="emblem">
       <svg viewBox="0 0 100 100" fill="none" stroke="#D8BE86" stroke-width="1.6">
@@ -403,6 +419,20 @@
     es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  // 히어로 5장 크로스페이드 슬라이드쇼
+  (function(){
+    const slides = document.querySelectorAll(".hero-slide");
+    const dots   = document.querySelectorAll(".hero-dots i");
+    let cur = 0;
+    // 프리로드
+    slides.forEach(s => { const m = s.style.backgroundImage.match(/url\(["']?(.+?)["']?\)/); if (m) { const im = new Image(); im.src = m[1]; } });
+    setInterval(() => {
+      slides[cur].classList.remove("on"); dots[cur].classList.remove("on");
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add("on"); dots[cur].classList.add("on");
+    }, 5200);
+  })();
 </script>
 </body>
 </html>
