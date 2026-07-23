@@ -138,6 +138,8 @@
     transform:skewX(-20deg); animation:sweepBtn 3.6s ease-in-out infinite;}
   @keyframes sweepBtn{0%,55%{left:-60%;} 85%{left:120%;} 100%{left:120%;}}
   .save button:active,.save a:active{transform:scale(.99);} .save button svg,.save a svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.8;}
+  .save.navy a{background:linear-gradient(100deg,#22456E,#3A6494 45%,#2F567F 55%,#1C3A5E);
+    box-shadow:0 8px 22px -8px rgba(28,58,94,.62);}
 
   .qr{padding:14px 22px 6px; text-align:center;}
   .qr-inner{display:inline-flex; flex-direction:column; align-items:center; gap:9px;
@@ -216,15 +218,10 @@
     <a class="act-event" href="https://biolis-clinic.github.io/biolis/event/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 8h14v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8z"/><path d="M3 8h18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2zM12 4v17"/></svg><span data-i="event">特別イベント</span><span class="ev-badge" data-i="evbadge">開催中</span></a>
 
     <div class="sec-lbl" data-i="secContact">連絡</div>
-    <div class="save" style="grid-column:1/-1;margin:0;">
-      <a href="patrick.vcf">
-        <svg viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>
-        <span data-i="save">連絡先を保存</span></a>
-    </div>
+    
 
     <div class="sec-lbl" data-i="secRef">ご紹介</div>
     <div class="ref-row"><a class="act-referral" href="https://biolis-clinic.github.io/biolis/form/?r=patrick" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-i="referral">紹介フォーム</span></a><button class="act-refcopy" onclick="copyRefLink(this)" data-url="https://biolis-clinic.github.io/biolis/form/?r=patrick"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span data-i="refcopy">リンクをコピー</span></button></div>
-    <a class="act-referral" href="https://biolis-clinic.github.io/biolis/ambassador/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L21 9.27l-5 4.87L17.18 21 12 17.77 6.82 21 8 14.14l-5-4.87 6.1-1.01L12 2z"/></svg><span data-i="ambrecruit">アンバサダー募集</span></a>
 
     <div class="sec-lbl" data-i="secShare">シェア</div>
     <button class="act-referral act-share" onclick="shareCard(this)" data-url="https://biolis-clinic.github.io/biolis/patrick/"><svg viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg><span data-i="sharecard">この名刺をシェア</span></button>
@@ -254,6 +251,16 @@
     <a class="act" href="https://lin.ee/QX9Yiqv" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M21 11c0-4.4-4-8-9-8s-9 3.6-9 8c0 4 3.3 7.3 7.8 7.9.9.2.8.6.7 1.3l-.2 1c-.1.6.4.9 1 .6C15 20.5 21 16.7 21 11z"/></svg>
       <span data-i="line">LINE予約</span></a>
+    <div class="save navy" style="grid-column:1/-1;margin:0;">
+      <a href="https://biolis-clinic.github.io/biolis/ambassador/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L21 9.27l-5 4.87L17.18 21 12 17.77 6.82 21 8 14.14l-5-4.87 6.1-1.01L12 2z"/></svg>
+        <span data-i="ambrecruit">アンバサダー募集</span></a>
+    </div>
+    <div class="save" style="grid-column:1/-1;margin:0;">
+      <a href="patrick.vcf">
+        <svg viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>
+        <span data-i="save">連絡先を保存</span></a>
+    </div>
   </div>
 
   <div class="qr" id="qrsec">
