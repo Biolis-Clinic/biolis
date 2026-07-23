@@ -53,10 +53,12 @@
   .top{padding:38px 30px 26px; text-align:center; position:relative;}
   .logo{width:74%; max-width:250px; margin:0 auto 22px; display:block; position:relative;}
   .logo-wrap{position:relative; overflow:hidden; display:inline-block; width:100%;}
-  .logo-wrap::after{content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
-    background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);
-    transform:skewX(-18deg); animation:sweep 5.5s ease-in-out infinite;}
-  @keyframes sweep{0%,60%{left:-60%;} 82%{left:120%;} 100%{left:120%;}}
+  .logo-wrap::after{content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(100deg,transparent 34%,rgba(255,240,205,.9) 50%,transparent 66%);
+    background-size:220% 100%; background-position:180% 0;
+    -webkit-mask:var(--logomask,none) center/100% auto no-repeat; mask:var(--logomask,none) center/100% auto no-repeat;
+    animation:sweep 5.5s ease-in-out infinite;}
+  @keyframes sweep{0%,58%{background-position:180% 0;} 84%{background-position:-80% 0;} 100%{background-position:-80% 0;}}
 
   .name{font-family:"Noto Serif JP","Noto Serif KR","Cormorant Garamond",serif; font-weight:600; font-size:30px;
     letter-spacing:2px; line-height:1.45; padding-bottom:6px;
@@ -404,6 +406,12 @@ function downloadQR(){
   a.href=document.getElementById("qrimg").src; a.download="BiOLiS_QR_Patrick Noh.png";
   document.body.appendChild(a); a.click(); a.remove();
 }
+</script>
+<script>
+  document.querySelectorAll(".logo-wrap").forEach(function(w){
+    var img=w.querySelector("img.logo");
+    if(img){ w.style.setProperty("--logomask","url('"+img.src+"')"); }
+  });
 </script>
 </body>
 </html>
