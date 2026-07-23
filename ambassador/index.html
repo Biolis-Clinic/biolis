@@ -417,6 +417,10 @@
         <a class="btn-dark" href="https://lin.ee/QX9Yiqv" target="_blank" rel="noopener" data-i="ctBtn2">LINEで相談</a>
         <a class="btn-dark" href="https://instagram.com/biolisclinic" target="_blank" rel="noopener">Instagram DM</a>
       </div>
+      <div class="cta-row" style="margin-top:14px;">
+        <a class="btn-dark" data-i="pgShare" href="https://line.me/R/share?text=BiOLiS%20CLINIC%20%E3%82%A2%E3%83%B3%E3%83%90%E3%82%B5%E3%83%80%E3%83%BC%E5%8B%9F%E9%9B%86%0Ahttps%3A//biolis-clinic.github.io/biolis/ambassador/" target="_blank" rel="noopener">このページをLINEで送る</a>
+        <button class="btn-dark" data-i="pgCopy" style="cursor:pointer;font-family:inherit;" onclick="copyPageLink(this)">リンクをコピー</button>
+      </div>
     </div>
   </div>
 </section>
@@ -473,7 +477,7 @@
     ctTitle:'<span>アンバサダーに</span><span>応募する</span>',
     ctH3:"応募フォームからご登録ください",
     ctP:'日本語・英語・韓国語に対応した応募フォームをご用意しています（約1分で完了）。<br class="pc">ご登録後、担当者よりプログラムの詳細と専用リンクの発行についてご案内いたします。<br class="pc">ご質問はLINE・Instagram DMでもお気軽にどうぞ。',
-    ctBtn1:"応募フォームへ", ctBtn2:"LINEで相談",
+    ctBtn1:"応募フォームへ", ctBtn2:"LINEで相談", pgShare:"このページをLINEで送る", pgCopy:"リンクをコピー", pgCopied:"コピーしました",
     hours:"受付 10:00–19:00 ｜ 東京駅 八重洲北口 徒歩3分 · 日本橋駅 徒歩2分"
   },
   en:{
@@ -510,7 +514,7 @@
     ctTitle:'<span>Apply to become</span> <span>an Ambassador</span>',
     ctH3:"Register via the application form",
     ctP:'The application form is available in Japanese, English, and Korean (about 1 minute). <br class="pc">After registering, our team will contact you with program details and your personal link. <br class="pc">Questions are welcome via LINE or Instagram DM.',
-    ctBtn1:"Application Form", ctBtn2:"Chat on LINE",
+    ctBtn1:"Application Form", ctBtn2:"Chat on LINE", pgShare:"Share this page via LINE", pgCopy:"Copy link", pgCopied:"Copied!",
     hours:"Open 10:00–19:00 | 3 min from Tokyo Sta. (Yaesu North Exit) · 2 min from Nihombashi Sta."
   },
   ko:{
@@ -547,7 +551,7 @@
     ctTitle:'<span>앰배서더</span> <span>지원하기</span>',
     ctH3:"지원 폼으로 등록해 주세요",
     ctP:'일본어·영어·한국어를 지원하는 지원 폼을 준비했습니다(약 1분 소요). <br class="pc">등록 후 담당자가 프로그램 상세와 전용 링크 발급을 안내해 드립니다. <br class="pc">문의는 LINE·Instagram DM으로 편하게 주세요.',
-    ctBtn1:"지원 폼으로", ctBtn2:"LINE 상담",
+    ctBtn1:"지원 폼으로", ctBtn2:"LINE 상담", pgShare:"이 페이지를 LINE으로 공유", pgCopy:"링크 복사", pgCopied:"복사되었습니다",
     hours:"접수 10:00–19:00 ｜ 도쿄역 야에스 북쪽 출구 도보 3분 · 니혼바시역 도보 2분"
   }};
 
@@ -569,6 +573,16 @@
     _lang = n.indexOf("ko")===0 ? "ko" : n.indexOf("en")===0 ? "en" : "ja";
   }
   setLang(_lang);
+
+  // 페이지 링크 복사
+  function copyPageLink(btn){
+    var url="https://biolis-clinic.github.io/biolis/ambassador/";
+    (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(function(){
+      var l=document.documentElement.lang||"ja";
+      var t=btn.textContent; btn.textContent="✓ "+(L[l]&&L[l].pgCopied||"コピーしました");
+      setTimeout(function(){ var l2=document.documentElement.lang||"ja"; btn.textContent=(L[l2]&&L[l2].pgCopy)||t; },1400);
+    }).catch(function(){ prompt("URL", url); });
+  }
 
   // 스크롤 시 언어 탭 숨김
   (function(){
