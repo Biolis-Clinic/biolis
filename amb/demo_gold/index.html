@@ -150,7 +150,12 @@ new QRCode(document.getElementById("qr"),{text:"https://biolis-clinic.github.io/
     var fill=document.getElementById("pfill"),note=document.getElementById("pnote");
     if(next){ fill.style.width=Math.min(100,Math.round(n/next[1]*100))+"%";
       note.textContent=next[0]+"まであと"+(next[1]-n)+"件"; }
-    else{ fill.style.width="100%"; note.textContent="GOLD達成 — ありがとうございます"; }
+    else{
+      document.querySelector(".prog-top span").textContent="累計ご紹介成約";
+      var ms=Math.ceil((n+1)/5)*5, base=ms-5;
+      fill.style.width=Math.round((n-base)/5*100)+"%";
+      note.textContent="次のマイルストーン "+ms+"件まであと"+(ms-n)+"件";
+    }
   }
   render(DEMO_COUNT);
   if(SHEET_CSV){
