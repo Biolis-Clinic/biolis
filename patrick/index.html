@@ -51,12 +51,12 @@
     box-shadow:0 22px 60px -18px rgba(0,0,0,.6), 0 2px 6px rgba(0,0,0,.2);
     border:1px solid rgba(216,190,134,.22); overflow:hidden;}
   .top{padding:38px 30px 26px; text-align:center; position:relative;}
-  .logo{width:74%; max-width:250px; margin:0 auto 22px; display:block; position:relative;}
-  .logo-wrap{position:relative; overflow:hidden; display:inline-block; width:100%;}
+  .logo{width:100%; display:block; position:relative;}
+  .logo-wrap{position:relative; overflow:hidden; display:block; width:74%; max-width:250px; margin:0 auto 22px;}
   .logo-wrap::after{content:""; position:absolute; inset:0; pointer-events:none;
     background:linear-gradient(100deg,transparent 34%,rgba(255,240,205,.9) 50%,transparent 66%);
     background-size:220% 100%; background-position:180% 0;
-    -webkit-mask:var(--logomask,none) center/100% auto no-repeat; mask:var(--logomask,none) center/100% auto no-repeat;
+    -webkit-mask:var(--logomask,none) center/100% 100% no-repeat; mask:var(--logomask,none) center/100% 100% no-repeat;
     animation:sweep 5.5s ease-in-out infinite;}
   @keyframes sweep{0%,58%{background-position:180% 0;} 84%{background-position:-80% 0;} 100%{background-position:-80% 0;}}
 
