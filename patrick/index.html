@@ -130,9 +130,9 @@
 
   .save{margin:12px 22px 4px;}
   .save button,.save a{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;position:relative; overflow:hidden; width:100%; border:none; cursor:pointer; padding:16px; border-radius:14px;
-    background:linear-gradient(100deg,#B79350,#D8BE86 45%,#C4A461 55%,#A9863E);
+    background:linear-gradient(100deg,#2C6B57,#3E8C71 45%,#347A61 55%,#265E4C);
     color:#fff; font:700 14px/1 "Noto Sans JP",sans-serif; letter-spacing:1px;
-    box-shadow:0 8px 22px -8px rgba(160,120,50,.55); display:flex; align-items:center; justify-content:center; gap:9px;}
+    box-shadow:0 8px 22px -8px rgba(38,94,76,.62); display:flex; align-items:center; justify-content:center; gap:9px;}
   .save button::after,.save a::after{content:""; position:absolute; top:0; left:-60%; width:45%; height:100%;
     background:linear-gradient(100deg,transparent,rgba(255,255,255,.42),transparent);
     transform:skewX(-20deg); animation:sweepBtn 3.6s ease-in-out infinite;}
@@ -216,12 +216,6 @@
     <a class="act-event" href="https://biolis-clinic.github.io/biolis/event/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 8h14v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8z"/><path d="M3 8h18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2zM12 4v17"/></svg><span data-i="event">特別イベント</span><span class="ev-badge" data-i="evbadge">開催中</span></a>
 
     <div class="sec-lbl" data-i="secContact">連絡</div>
-    <a class="act" href="tel:+817089090556">
-      <svg viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2.5-3-4.5-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4.5L4 5z"/></svg>
-      <span data-i="call">電話</span></a>
-    <a class="act" href="https://lin.ee/QX9Yiqv" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M21 11c0-4.4-4-8-9-8s-9 3.6-9 8c0 4 3.3 7.3 7.8 7.9.9.2.8.6.7 1.3l-.2 1c-.1.6.4.9 1 .6C15 20.5 21 16.7 21 11z"/></svg>
-      <span data-i="line">LINE予約</span></a>
     <div class="save" style="grid-column:1/-1;margin:0;">
       <a href="patrick.vcf">
         <svg viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>
@@ -251,6 +245,15 @@
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
         <span data-i="web">ウェブ</span></a>
     </div>
+  </div>
+
+  <div class="actions" style="padding:4px 22px 0;">
+    <a class="act" href="tel:+817089090556">
+      <svg viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2.5-3-4.5-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4.5L4 5z"/></svg>
+      <span data-i="call">電話</span></a>
+    <a class="act" href="https://lin.ee/QX9Yiqv" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M21 11c0-4.4-4-8-9-8s-9 3.6-9 8c0 4 3.3 7.3 7.8 7.9.9.2.8.6.7 1.3l-.2 1c-.1.6.4.9 1 .6C15 20.5 21 16.7 21 11z"/></svg>
+      <span data-i="line">LINE予約</span></a>
   </div>
 
   <div class="qr" id="qrsec">
