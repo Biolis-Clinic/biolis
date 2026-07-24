@@ -176,7 +176,7 @@ function setLang(l){
   render(LAST_N);
 }
 (function(){
-  var CODE="tanaka";var SHEET_CSV="";
+  var CODE="tanaka";var SHEET_CSV="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFmGs3GzWp4zeYxnfDPsRvesqFH5xD2PYkYzoGkzPh3VT1N81CVCHqLEMz58jsuc4NX2rVCHZ-aWZm/pub?gid=856056816&single=true&output=csv";
   var nv=(navigator.language||"ja").toLowerCase();
   setLang(nv.indexOf("ko")===0?"ko":nv.indexOf("en")===0?"en":"ja");
   if(SHEET_CSV){
