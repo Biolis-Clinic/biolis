@@ -118,7 +118,9 @@
         radial-gradient(900px 500px at 90% 0%, rgba(216,190,134,.20), transparent 55%), var(--panel);}
   .dark .sec-title{color:#fff;}
   .dark .lead{color:#C9C2B2;}
-  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:56px;}
+  .refband{max-width:640px;margin:30px auto 0;padding:14px 22px;border:1px solid rgba(184,148,74,.55);background:rgba(184,148,74,.10);color:#E6D9B8;text-align:center;font-size:14.5px;letter-spacing:.06em;}
+  .refband b{color:#D9B96C;font-size:17px;}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:40px;}
   .tier{background:var(--panel-2);border:1px solid rgba(184,148,74,.35);padding:40px 28px;text-align:center;color:#EDE6D4;}
   .tier.hot{border:1.5px solid var(--gold);background:linear-gradient(180deg,rgba(184,148,74,.14),rgba(184,148,74,.03));}
   .tier .tname{font-family:"Cormorant Garamond",serif;font-size:22px;letter-spacing:.26em;color:var(--gold-light);}
@@ -297,6 +299,7 @@
     <h2 class="sec-title" data-i="rwTitle">特典・等級</h2>
     <div class="sec-rule"></div>
     <p class="lead" data-i="rwLead"></p>
+    <div class="refband" data-i="rwBand">ご紹介された方には <b>初回施術 15％OFF</b> の特典</div>
     <div class="tiers">
       <div class="tier">
         <div class="tname">MEMBER</div>
@@ -463,6 +466,7 @@
     c4t:"3言語対応", c4p:"紹介ページ・フォームは日本語・英語・韓国語に対応。国内のご友人はもちろん、海外にお住まいの方のご紹介もそのまま可能です。",
     rwTitle:"特典・等級",
     rwLead:'ご紹介いただいた方が施術を受けられると、決済額に応じた特典を進呈します。<br class="pc">ご紹介された方にも初回特典があり、双方にメリットのある設計です。',
+    rwBand:'ご紹介された方には <b>初回施術 15％OFF</b> の特典',
     t1c:"ご紹介成約 1〜5件", t2c:"ご紹介成約 5〜10件", t3c:"ご紹介成約 10〜25件 · 面談認定",
     t1v:'3<small>％相当</small>', t2v:'4<small>％相当</small>', t3v:'6<small>％（現金報酬）</small>',
     liCredit:"院内クレジット進呈（施術・院内商品に利用可）", liEarly:"新メニューの先行案内",
@@ -500,6 +504,7 @@
     c4t:"Available in 3 languages", c4p:"Referral pages and forms support Japanese, English, and Korean — refer friends in Japan or overseas just the same.",
     rwTitle:"Rewards & Tiers",
     rwLead:'When someone you refer receives treatment, you earn rewards based on the payment amount. <br class="pc">The person you refer also receives a first-visit benefit — a win for both sides.',
+    rwBand:'Your guest receives <b>15% OFF</b> their first treatment',
     t1c:"1–5 completed referrals", t2c:"5–10 completed referrals", t3c:"10–25 referrals · interview",
     t1v:'3<small>% in credit</small>', t2v:'4<small>% in credit</small>', t3v:'6<small>% (cash)</small>',
     liCredit:"In-clinic credit (usable for treatments & clinic products)", liEarly:"Early access to new menus",
@@ -537,6 +542,7 @@
     c4t:"3개 언어 지원", c4p:"소개 페이지·폼은 일본어·영어·한국어를 지원합니다. 국내 지인은 물론 해외에 거주하는 분의 소개도 그대로 가능합니다.",
     rwTitle:"특전·등급",
     rwLead:'소개하신 분이 시술을 받으시면 결제 금액에 따른 특전을 드립니다. <br class="pc">소개받은 분에게도 첫 방문 특전이 있어 양쪽 모두에게 이점이 있는 설계입니다.',
+    rwBand:'소개받은 분께는 <b>첫 시술 15% 할인</b> 특전',
     t1c:"소개 성사 1~5건", t2c:"소개 성사 5~10건", t3c:"소개 성사 10~25건 · 면담 심사",
     t1v:'3<small>% 상당</small>', t2v:'4<small>% 상당</small>', t3v:'6<small>% (현금 보수)</small>',
     liCredit:"원내 크레딧 증정 (시술·원내 상품 사용 가능)", liEarly:"신규 메뉴 우선 안내",
