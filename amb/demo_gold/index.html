@@ -39,6 +39,10 @@ body{font-family:"Noto Sans JP",sans-serif;background:radial-gradient(120% 90% a
 @keyframes sweep{0%,55%{left:-60%;}85%{left:120%;}100%{left:120%;}}
 .btn-main svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.8;}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){
+  .row{gap:8px;}
+  .row .btn{gap:5px;padding:13px 4px;font-size:11px;letter-spacing:0;}
+}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 10px;border-radius:14px;
   border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;
   font:600 12.5px/1 "Noto Sans JP",sans-serif;letter-spacing:.4px;transition:.18s;font-family:inherit;}
