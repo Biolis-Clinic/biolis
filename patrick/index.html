@@ -122,6 +122,12 @@ gtag('js',new Date());gtag('config','G-0TD03G8G4Q');
   .act-refcopy:active{transform:scale(.99);}
   .act-refcopy svg{width:18px; height:18px; stroke:var(--gold-dk); fill:none; stroke-width:1.8; flex-shrink:0;}
   .act-refcopy span{font:600 12.5px/1 "Noto Sans JP",sans-serif; letter-spacing:.4px; white-space:nowrap;}
+  @media(max-width:420px){
+    .act-refcopy{gap:6px; padding:13px 5px;}
+    .act-refcopy span{font-size:11px; letter-spacing:0;}
+    .ref-row .act-referral{gap:6px; padding:13px 5px;}
+    .ref-row .act-referral span{font-size:11px; letter-spacing:0;}
+  }
   .act-refcopy.copied{background:linear-gradient(100deg,#B79350,#D8BE86 45%,#C4A461 55%,#A9863E); border-color:transparent; color:#fff;}
   .act-refcopy.copied svg{stroke:#fff;}
 
