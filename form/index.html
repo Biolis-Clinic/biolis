@@ -30,13 +30,14 @@
   const REFS = {
     "patrick":   "パトリック・ノ",
     "hirota":    "廣田 和久",
-    "matsumoto": "松本 拓也"
+    "matsumoto": "松本 拓也",
+    "r-love.misa": "塚田美咲"
   };
   const code = new URLSearchParams(location.search).get("r");
   const REDIRECT_URL = (code && REFS[code])
     ? FORM_BASE + "?usp=pp_url&" + ENTRY_REF + "=" + encodeURIComponent(REFS[code])
     : FORM_SHORT;
-  setTimeout(function(){ window.location.replace(REDIRECT_URL); }, 900);
+  setTimeout(function(){ window.location.replace(REDIRECT_URL); }, 2500);
   document.addEventListener("DOMContentLoaded", function(){
     document.querySelectorAll("a[data-form]").forEach(a => a.href = REDIRECT_URL);
   });
