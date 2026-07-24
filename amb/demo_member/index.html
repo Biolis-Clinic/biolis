@@ -30,6 +30,9 @@ body{font-family:"Noto Sans JP",sans-serif;background:radial-gradient(120% 90% a
 .tier-note{font-size:10.5px;color:var(--mut);margin-top:8px;letter-spacing:.14em;}
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.55;margin:26px 30px 0;}
 .actions{padding:24px 22px 10px;display:grid;gap:10px;}
+.grp-label{display:flex;align-items:center;gap:10px;font:700 9.5px/1 "Noto Sans JP",sans-serif;letter-spacing:.24em;color:var(--mut);margin:2px 2px 0;}
+.grp-label::before,.grp-label::after{content:"";height:1px;background:var(--line);flex:1;}
+.grp-gap{margin-top:18px;}
 .btn-main{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:9px;
   padding:16px;border-radius:14px;text-decoration:none;background:linear-gradient(100deg,#96562F,#C58B5A 45%,#B0744A 55%,#84491F);color:#fff;
   font:700 14px/1 "Noto Sans JP",sans-serif;letter-spacing:1px;box-shadow:0 8px 22px -8px rgba(70,54,34,.35);}
@@ -123,6 +126,7 @@ body{font-family:"Noto Sans JP",sans-serif;background:radial-gradient(120% 90% a
     </div>
   </div>
   <div class="actions">
+    <div class="grp-label" data-i="grpRef">ご紹介</div>
     <a class="btn-main" href="https://biolis-clinic.github.io/biolis/form/?r=tanaka" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
       <span data-i="refmain">BiOLiSを紹介する</span></a>
@@ -134,6 +138,10 @@ body{font-family:"Noto Sans JP",sans-serif;background:radial-gradient(120% 90% a
         <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         <span data-i="refcopy">紹介リンクをコピー</span></button>
     </div>
+    <div class="grp-label grp-gap" data-i="grpRec">アンバサダー募集</div>
+    <a class="amblink" href="https://biolis-clinic.github.io/biolis/ambassador/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+      <span data-i="about">アンバサダープログラムについて</span></a>
     <div class="row">
       <a class="btn" href="https://line.me/R/share?text=BiOLiS%20CLINIC%20%E3%82%A2%E3%83%B3%E3%83%90%E3%82%B5%E3%83%80%E3%83%BC%E5%8B%9F%E9%9B%86%0Ahttps%3A//biolis-clinic.github.io/biolis/join/%3Fr%3Dtanaka" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L21 9.27l-5 4.87L17.18 21 12 17.77 6.82 21 8 14.14l-5-4.87 6.1-1.01L12 2z"/></svg>
@@ -142,9 +150,6 @@ body{font-family:"Noto Sans JP",sans-serif;background:radial-gradient(120% 90% a
         <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         <span data-i="reccopy">募集リンクをコピー</span></button>
     </div>
-    <a class="amblink" href="https://biolis-clinic.github.io/biolis/ambassador/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
-      <span data-i="about">アンバサダープログラムについて</span></a>
   </div>
   <details class="fine">
     <summary data-i="fineT">プログラム規定を見る</summary>
@@ -174,11 +179,11 @@ new QRCode(document.getElementById("qr"),{text:"https://biolis-clinic.github.io/
 </script>
 <script>
 var L={
- ja:{mrSub:"還元率（院内クレジット）",refoff:"ご紹介された方は 初回施術 15％OFF",tag:"東京・八重洲｜美容皮膚科 × 美容外科",scan:"スキャンでご紹介",refmain:"BiOLiSを紹介する",refline:"紹介をLINEで送る",refcopy:"紹介リンクをコピー",recline:"募集をLINEで送る",reccopy:"募集リンクをコピー",fineT:"プログラム規定を見る",fp1:"【成約の定義】成約1件＝ご紹介の新規のお客様1名の初回施術・お会計の完了。還元は初回決済額が対象で、再来院は加算されません。",fp2:"【特典率】MEMBER 3％（1〜5件）／SILVER 4％（6〜10件）／GOLD 6％（11〜25件）。MEMBER・SILVERは院内クレジットでの還元です。",fp3:"【クレジット】1,000円単位で付与し、残高の範囲内でご利用いただけます。有効期限は付与月から24ヶ月目の月末まで（古い付与分から差引・期限前にメールでお知らせ）。現金化・譲渡不可、自由診療のみ対象。",fp4:"【等級基準】MEMBER 1件〜／SILVER 6件〜／GOLD 11件〜（面談認定）。",fp5:"※ 内容は変更となる場合があります。",about:"アンバサダープログラムについて",copied:"コピーしました",lbl:"ご紹介成約",cum:"累計ご紹介成約",unit:" 件",
+ ja:{grpRef:"ご紹介",grpRec:"アンバサダー募集",mrSub:"還元率（院内クレジット）",refoff:"ご紹介された方は 初回施術 15％OFF",tag:"東京・八重洲｜美容皮膚科 × 美容外科",scan:"スキャンでご紹介",refmain:"BiOLiSを紹介する",refline:"紹介をLINEで送る",refcopy:"紹介リンクをコピー",recline:"募集をLINEで送る",reccopy:"募集リンクをコピー",fineT:"プログラム規定を見る",fp1:"【成約の定義】成約1件＝ご紹介の新規のお客様1名の初回施術・お会計の完了。還元は初回決済額が対象で、再来院は加算されません。",fp2:"【特典率】MEMBER 3％（1〜5件）／SILVER 4％（6〜10件）／GOLD 6％（11〜25件）。MEMBER・SILVERは院内クレジットでの還元です。",fp3:"【クレジット】1,000円単位で付与し、残高の範囲内でご利用いただけます。有効期限は付与月から24ヶ月目の月末まで（古い付与分から差引・期限前にメールでお知らせ）。現金化・譲渡不可、自由診療のみ対象。",fp4:"【等級基準】MEMBER 1件〜／SILVER 6件〜／GOLD 11件〜（面談認定）。",fp5:"※ 内容は変更となる場合があります。",about:"アンバサダープログラムについて",copied:"コピーしました",lbl:"ご紹介成約",cum:"累計ご紹介成約",unit:" 件",
   next:function(t,k){return t+"まであと"+k+"件";},ms:function(m,k){return "次のマイルストーン "+m+"件まであと"+k+"件";}},
- ko:{mrSub:"환원율 (원내 크레딧)",refoff:"소개받고 오신 분은 첫 시술 15% 할인",tag:"도쿄·야에스｜미용피부 × 미용성형",scan:"스캔하여 소개",refmain:"BiOLiS 소개하기",refline:"소개를 LINE으로 보내기",refcopy:"소개 링크 복사",recline:"모집을 LINE으로 보내기",reccopy:"모집 링크 복사",fineT:"프로그램 규정 보기",fp1:"【성사의 정의】 성사 1건 = 소개받은 신규 고객 1명의 첫 시술·결제 완료. 환원은 첫 결제액 기준이며 재방문은 가산되지 않습니다.",fp2:"【특전율】 MEMBER 3%(1~5건) / SILVER 4%(6~10건) / GOLD 6%(11~25건). MEMBER·SILVER는 원내 크레딧으로 환원됩니다.",fp3:"【크레딧】 1,000엔 단위로 부여되며 잔액 범위 내에서 사용하실 수 있습니다. 유효기간은 부여월로부터 24개월째 되는 달의 말일까지 (오래된 부여분부터 차감, 만료 전 이메일 안내). 현금화·양도 불가, 자유진료만 대상.",fp4:"【등급 기준】 MEMBER 1건~ / SILVER 6건~ / GOLD 11건~ (면담 인정).",fp5:"※ 내용은 변경될 수 있습니다.",about:"앰배서더 프로그램 안내",copied:"복사되었습니다",lbl:"소개 성사",cum:"누적 소개 성사",unit:" 건",
+ ko:{grpRef:"소개",grpRec:"앰배서더 모집",mrSub:"환원율 (원내 크레딧)",refoff:"소개받고 오신 분은 첫 시술 15% 할인",tag:"도쿄·야에스｜미용피부 × 미용성형",scan:"스캔하여 소개",refmain:"BiOLiS 소개하기",refline:"소개를 LINE으로 보내기",refcopy:"소개 링크 복사",recline:"모집을 LINE으로 보내기",reccopy:"모집 링크 복사",fineT:"프로그램 규정 보기",fp1:"【성사의 정의】 성사 1건 = 소개받은 신규 고객 1명의 첫 시술·결제 완료. 환원은 첫 결제액 기준이며 재방문은 가산되지 않습니다.",fp2:"【특전율】 MEMBER 3%(1~5건) / SILVER 4%(6~10건) / GOLD 6%(11~25건). MEMBER·SILVER는 원내 크레딧으로 환원됩니다.",fp3:"【크레딧】 1,000엔 단위로 부여되며 잔액 범위 내에서 사용하실 수 있습니다. 유효기간은 부여월로부터 24개월째 되는 달의 말일까지 (오래된 부여분부터 차감, 만료 전 이메일 안내). 현금화·양도 불가, 자유진료만 대상.",fp4:"【등급 기준】 MEMBER 1건~ / SILVER 6건~ / GOLD 11건~ (면담 인정).",fp5:"※ 내용은 변경될 수 있습니다.",about:"앰배서더 프로그램 안내",copied:"복사되었습니다",lbl:"소개 성사",cum:"누적 소개 성사",unit:" 건",
   next:function(t,k){return t+"까지 "+k+"건";},ms:function(m,k){return "다음 마일스톤 "+m+"건까지 "+k+"건";}},
- en:{mrSub:"Reward rate (in-clinic credit)",refoff:"Referred guests get 15% off their first treatment",tag:"Tokyo Yaesu | Aesthetic Dermatology × Cosmetic Surgery",scan:"Scan to refer",refmain:"Refer BiOLiS",refline:"Share referral via LINE",refcopy:"Copy referral link",recline:"Recruit via LINE",reccopy:"Copy recruit link",fineT:"View program terms",fp1:"[Completed referral] One completed referral = a new guest's first treatment and payment. Rewards are based on the first payment; repeat visits do not count.",fp2:"[Rates] MEMBER 3% (1–5) / SILVER 4% (6–10) / GOLD 6% (11–25). MEMBER and SILVER rewards are given as in-clinic credit.",fp3:"[Credit] Granted in \u00a51,000 units, usable within your balance. Valid until the end of the 24th month after grant (older credit used first; email notice before expiry). No cash-out or transfer; self-pay treatments only.",fp4:"[Tiers] MEMBER from 1 / SILVER from 6 / GOLD from 11 (with interview).",fp5:"* Terms may change.",about:"About the Ambassador Program",copied:"Copied!",lbl:"Completed referrals",cum:"Total referrals",unit:"",
+ en:{grpRef:"Referral",grpRec:"Recruit ambassadors",mrSub:"Reward rate (in-clinic credit)",refoff:"Referred guests get 15% off their first treatment",tag:"Tokyo Yaesu | Aesthetic Dermatology × Cosmetic Surgery",scan:"Scan to refer",refmain:"Refer BiOLiS",refline:"Share referral via LINE",refcopy:"Copy referral link",recline:"Recruit via LINE",reccopy:"Copy recruit link",fineT:"View program terms",fp1:"[Completed referral] One completed referral = a new guest's first treatment and payment. Rewards are based on the first payment; repeat visits do not count.",fp2:"[Rates] MEMBER 3% (1–5) / SILVER 4% (6–10) / GOLD 6% (11–25). MEMBER and SILVER rewards are given as in-clinic credit.",fp3:"[Credit] Granted in \u00a51,000 units, usable within your balance. Valid until the end of the 24th month after grant (older credit used first; email notice before expiry). No cash-out or transfer; self-pay treatments only.",fp4:"[Tiers] MEMBER from 1 / SILVER from 6 / GOLD from 11 (with interview).",fp5:"* Terms may change.",about:"About the Ambassador Program",copied:"Copied!",lbl:"Completed referrals",cum:"Total referrals",unit:"",
   next:function(t,k){return k+" more to "+t;},ms:function(m,k){return k+" more to the "+m+" milestone";}}
 };
 var CUR="ja";var LAST_N=3;
