@@ -70,6 +70,8 @@ body{font-family:"Noto Sans JP",sans-serif;background:radial-gradient(120% 90% a
 .mc-qr>div{background:#fff;padding:4px;border-radius:8px;border:1px solid #EEE8DC;display:inline-block;line-height:0;}
 .mc-qr img,.mc-qr canvas{width:76px !important;height:76px !important;}
 .mc-cap{display:block;font-size:8px;color:#9A8E7C;letter-spacing:.14em;margin-top:5px;}
+.fine{margin:16px 6px 0;font-size:9px;line-height:1.75;color:var(--mut);text-align:left;padding:0 4px;}
+.fine p{margin:0 0 4px;padding-left:1em;text-indent:-1em;}
 .foot{text-align:center;font-size:9.5px;color:var(--mut);letter-spacing:.22em;padding:18px 20px 26px;}
 </style>
 </head>
@@ -129,6 +131,11 @@ body{font-family:"Noto Sans JP",sans-serif;background:radial-gradient(120% 90% a
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
       <span data-i="about">アンバサダープログラムについて</span></a>
   </div>
+  <div class="fine">
+    <p data-i="fine1">※ 特典：MEMBER 3％／SILVER 4％／GOLD 5％（成約1件＝ご紹介の新規のお客様の初回施術・お会計完了）</p>
+    <p data-i="fine2">※ クレジットは1,000円単位で付与し、残高の範囲内でご利用いただけます。有効期限は付与月から12ヶ月目の月末までです。</p>
+    <p data-i="fine3">※ 現金化・譲渡はできません。対象は自由診療のみです。内容は変更となる場合があります。</p>
+  </div>
   <div class="foot">BiOLiS CLINIC ｜ TOKYO YAESU</div>
 </div>
 <script>
@@ -147,11 +154,11 @@ new QRCode(document.getElementById("qr"),{text:"https://biolis-clinic.github.io/
 </script>
 <script>
 var L={
- ja:{tag:"東京・八重洲｜再生医療 × 美容医療",scan:"スキャンでご紹介",refmain:"BiOLiSを紹介する",refline:"紹介をLINEで送る",refcopy:"紹介リンクをコピー",recline:"募集をLINEで送る",reccopy:"募集リンクをコピー",about:"アンバサダープログラムについて",copied:"コピーしました",lbl:"ご紹介成約",cum:"累計ご紹介成約",unit:" 件",
+ ja:{tag:"東京・八重洲｜再生医療 × 美容医療",scan:"スキャンでご紹介",refmain:"BiOLiSを紹介する",refline:"紹介をLINEで送る",refcopy:"紹介リンクをコピー",recline:"募集をLINEで送る",reccopy:"募集リンクをコピー",fine1:"※ 特典：MEMBER 3％／SILVER 4％／GOLD 5％（成約1件＝ご紹介の新規のお客様の初回施術・お会計完了）",fine2:"※ クレジットは1,000円単位で付与し、残高の範囲内でご利用いただけます。有効期限は付与月から12ヶ月目の月末までです。",fine3:"※ 現金化・譲渡はできません。対象は自由診療のみです。内容は変更となる場合があります。",about:"アンバサダープログラムについて",copied:"コピーしました",lbl:"ご紹介成約",cum:"累計ご紹介成約",unit:" 件",
   next:function(t,k){return t+"まであと"+k+"件";},ms:function(m,k){return "次のマイルストーン "+m+"件まであと"+k+"件";}},
- ko:{tag:"도쿄·야에스｜재생의료 × 미용의료",scan:"스캔하여 소개",refmain:"BiOLiS 소개하기",refline:"소개를 LINE으로 보내기",refcopy:"소개 링크 복사",recline:"모집을 LINE으로 보내기",reccopy:"모집 링크 복사",about:"앰배서더 프로그램 안내",copied:"복사되었습니다",lbl:"소개 성사",cum:"누적 소개 성사",unit:" 건",
+ ko:{tag:"도쿄·야에스｜재생의료 × 미용의료",scan:"스캔하여 소개",refmain:"BiOLiS 소개하기",refline:"소개를 LINE으로 보내기",refcopy:"소개 링크 복사",recline:"모집을 LINE으로 보내기",reccopy:"모집 링크 복사",fine1:"※ 특전: MEMBER 3% / SILVER 4% / GOLD 5% (성사 1건 = 소개받은 신규 고객의 첫 시술·결제 완료)",fine2:"※ 크레딧은 1,000엔 단위로 부여되며 잔액 범위 내에서 사용하실 수 있습니다. 유효기간은 부여월로부터 12개월째 되는 달의 말일까지입니다.",fine3:"※ 현금화·양도는 불가하며, 대상은 자유진료에 한합니다. 내용은 변경될 수 있습니다.",about:"앰배서더 프로그램 안내",copied:"복사되었습니다",lbl:"소개 성사",cum:"누적 소개 성사",unit:" 건",
   next:function(t,k){return t+"까지 "+k+"건";},ms:function(m,k){return "다음 마일스톤 "+m+"건까지 "+k+"건";}},
- en:{tag:"Tokyo Yaesu | Regenerative × Aesthetic Medicine",scan:"Scan to refer",refmain:"Refer BiOLiS",refline:"Share referral via LINE",refcopy:"Copy referral link",recline:"Recruit via LINE",reccopy:"Copy recruit link",about:"About the Ambassador Program",copied:"Copied!",lbl:"Completed referrals",cum:"Total referrals",unit:"",
+ en:{tag:"Tokyo Yaesu | Regenerative × Aesthetic Medicine",scan:"Scan to refer",refmain:"Refer BiOLiS",refline:"Share referral via LINE",refcopy:"Copy referral link",recline:"Recruit via LINE",reccopy:"Copy recruit link",fine1:"* Rewards: MEMBER 3% / SILVER 4% / GOLD 5% (one completed referral = a new guest's first treatment and payment).",fine2:"* Credit is granted in \u00a51,000 units and can be used within your balance. Valid until the end of the 12th month after it is granted.",fine3:"* No cash-out or transfer. Self-pay (non-covered) treatments only. Terms may change.",about:"About the Ambassador Program",copied:"Copied!",lbl:"Completed referrals",cum:"Total referrals",unit:"",
   next:function(t,k){return k+" more to "+t;},ms:function(m,k){return k+" more to the "+m+" milestone";}}
 };
 var CUR="ja";var LAST_N=3;
