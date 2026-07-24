@@ -189,7 +189,7 @@ var L={
 var CUR="ja";var LAST_N=6;
 function render(n){
   LAST_N=n;var T=L[CUR];
-  var tiers=[["MEMBER",1],["SILVER",5],["GOLD",10]];
+  var tiers=[["SILVER",5],["GOLD",10]];
   var next=null;
   for(var i=0;i<tiers.length;i++){ if(n<tiers[i][1]&&!next) next=tiers[i]; }
   document.getElementById("pcount").innerHTML=n+"<small>"+T.unit+"</small>";
