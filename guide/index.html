@@ -250,6 +250,18 @@ document.querySelectorAll('.langs button').forEach(b =>
   }
   setLang(l);
 })();
+
+/* ---------- 简体中文 ---------- */
+DICT.zh = {"heroEyebrow":"HOW TO USE","heroTitle":"大使使用指南","heroLead":"为您介绍大使专属页面的使用方法。添加至主屏幕与进行推荐，都只需约 1 分钟即可完成。","n1":"HOME SCREEN","t1":"添加到主屏幕","p1":"请在打开专属页面的状态下，按照以下步骤操作。主屏幕上会新增 BiOLiS 图标，如同应用程序一般一键即可访问。","ios":"用 Safari 打开，点击分享按钮（□↑）→「添加到主屏幕」","aos":"用 Chrome 打开，点击菜单（︙）→「添加到主屏幕」","note1":"※ 专属页面网址请使用诊所通过邮件发送给您的地址。由于是您本人专属的链接，敬请避免在社交媒体等公开发布。","n2":"REFERRAL","t2":"推荐方法","p2":"请通过以下任一方式告知您想推荐的对象。推荐人姓名会自动填入。","w1t":"请对方扫描二维码","w1d":"请对方用智能手机相机，当场扫描专属页面内的二维码。","w2t":"直接发送链接","w2d":"将专属页面的「推荐 BiOLiS」链接，通过 LINE 等发送给对方。","cauT":"注意事项","cauD":"仅发送链接并不算完成推荐。需被推荐者打开链接、填写并提交表单，才算完成 1 件推荐。","n3":"PROGRAM","t3":"大使项目介绍页面","p3":"我们准备了可以了解项目全貌的官方页面，汇总了制度宗旨・回馈内容・参加流程・常见问题，欢迎在推荐或说明时加以运用。","cta3":"查看项目页面","cT":"联系我们","cD":"如有任何疑问，欢迎随时与我们联系。","cLine":"通过 LINE 咨询","cIg":"Instagram DM","fAddr":"〒103-0028 东京都中央区八重洲 1-3-18 VORT东京八重洲maxim 5F<br>接待时间 10:00–19:00 ｜ 东京站 八重洲北口 步行 3 分钟"};
+LANGS.zh = "zh-CN";
+(function(){
+  var st=document.createElement("style");st.textContent=".langs button{padding:6px 9px}@media(max-width:420px){.brand{font-size:14px;letter-spacing:.12em}.langs button{padding:6px 7px;font-size:10px}}";document.head.appendChild(st);
+  var lb=document.querySelector(".langs");
+  if(lb){var b=document.createElement("button");b.dataset.lang="zh";b.textContent="中文";b.addEventListener("click",function(){setLang("zh")});lb.appendChild(b);}
+  var saved=null;try{saved=localStorage.getItem("biolis_guide_lang");}catch(e){}
+  if(saved==="zh"){setLang("zh");}
+  else if(!saved&&(navigator.language||"").toLowerCase().indexOf("zh")===0){setLang("zh");}
+})();
 </script>
 </body>
 </html>
