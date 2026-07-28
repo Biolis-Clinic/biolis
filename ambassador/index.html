@@ -648,5 +648,29 @@ try{var s=localStorage.getItem("biolis_lang");if(s==="zh"){setLang("zh");}else i
   setLang(cur.indexOf("zh")===0?"zh":cur);
 })();
 </script>
+<style>
+.fine{padding-left:0 !important;text-indent:0 !important;}
+.fine .fine-li{display:block;padding-left:1.2em;text-indent:-1.2em;}
+.fine .fine-li + .fine-li{margin-top:1px;}
+</style>
+<script>
+/* ※ 注記の行頭を揃える（ぶら下げインデントを項目ごとに適用） */
+(function(){
+  var el=document.querySelector(".fine"); if(!el) return;
+  var obs;
+  function fmt(){
+    var html=el.innerHTML;
+    if(html.indexOf("fine-li")>=0) return;
+    var parts=html.split(/<br\s*\/?>/i).map(function(s){return s.trim();}).filter(Boolean);
+    if(parts.length<2) return;
+    obs.disconnect();
+    el.innerHTML=parts.map(function(p){return '<span class="fine-li">'+p+'</span>';}).join("");
+    obs.observe(el,{childList:true,subtree:true,characterData:true});
+  }
+  obs=new MutationObserver(fmt);
+  obs.observe(el,{childList:true,subtree:true,characterData:true});
+  fmt();
+})();
+</script>
 </body>
 </html>
