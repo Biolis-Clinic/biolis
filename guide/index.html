@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ご利用ガイド ｜ BiOLiS AMBASSADOR</title>
+<meta name="description" content="BiOLiS CLINIC アンバサダー専用ページのご利用ガイド。ホーム画面への追加方法、ご紹介の方法をご案内します。">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F4ED">
+<link rel="icon" href="https://biolis-clinic.github.io/biolis/assets/icon-192.png">
+<link rel="apple-touch-icon" href="https://biolis-clinic.github.io/biolis/assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1A16; --ink-soft:#4A453C; --ivory:#F7F4ED; --ivory-2:#FBF9F4;
+  --gold:#B8944A; --gold-deep:#93752F; --gold-light:#E8C87A;
+  --line:#E4DCCA; --panel:#2E2618; --panel-2:#3A3122;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--ivory);color:var(--ink);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Noto Serif JP",serif;font-weight:600}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:0;z-index:50;background:rgba(247,244,237,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:"Cormorant Garamond",serif;font-size:17px;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand em{font-style:normal;color:var(--gold-deep)}
+.langs{display:flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff}
+.langs button{font-family:inherit;font-size:11px;letter-spacing:.06em;padding:6px 11px;border:0;border-radius:999px;background:transparent;color:var(--ink-soft);cursor:pointer;transition:.2s}
+.langs button.on{background:var(--panel);color:var(--gold-light)}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(160deg,var(--panel) 0%,var(--panel-2) 100%);color:#fff;padding:74px 0 66px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hero .eyebrow{font-size:10px;letter-spacing:.34em;color:var(--gold-light);margin-bottom:22px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(38px,8vw,60px);letter-spacing:.14em;line-height:1.1;color:#fff}
+.hero .jp{font-family:"Noto Serif JP",serif;font-size:14px;letter-spacing:.2em;color:rgba(255,255,255,.7);margin-top:16px}
+.hero .lead{font-size:13.5px;line-height:2;color:rgba(255,255,255,.62);margin-top:26px;max-width:520px;margin-left:auto;margin-right:auto}
+
+/* ---------- sections ---------- */
+.sec{padding:64px 0 4px}
+.step{background:var(--ivory-2);border:1px solid var(--line);border-radius:14px;padding:34px 32px;margin-bottom:26px}
+.num{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.num b{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:500;color:var(--gold);letter-spacing:.06em;line-height:1}
+.num span{font-size:9.5px;letter-spacing:.26em;color:var(--gold-deep)}
+.step h2{font-size:21px;letter-spacing:.05em;margin-bottom:16px}
+.step p{font-size:14px;line-height:2;color:var(--ink-soft)}
+
+.device{display:flex;gap:22px;align-items:flex-start;margin-top:20px;flex-wrap:wrap}
+.device img{width:72px;height:72px;border-radius:17px;border:1px solid var(--line);flex:none;background:#fff}
+.device .os{flex:1;min-width:240px}
+.os-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.8;color:var(--ink-soft)}
+.os-row:last-child{border-bottom:0}
+.os-row .tag{flex:none;width:78px;font-size:10px;letter-spacing:.12em;color:var(--gold-deep);padding-top:4px}
+.note{margin-top:18px;font-size:12.5px;line-height:1.95;color:var(--ink-soft);background:#fff;border-left:2px solid var(--gold);border-radius:2px;padding:14px 18px}
+
+.ways{margin-top:18px;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+.way{display:flex;gap:16px;padding:18px 20px;border-bottom:1px solid var(--line)}
+.way:last-child{border-bottom:0}
+.way i{font-style:normal;font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--gold);flex:none;line-height:1.4}
+.way div{font-size:13.5px;line-height:1.85;color:var(--ink-soft)}
+.way strong{display:block;color:var(--ink);font-weight:500;font-size:14px;margin-bottom:2px}
+
+.caution{margin-top:16px;background:#fff;border:1px solid var(--gold-light);border-radius:10px;padding:18px 20px}
+.caution b{display:block;font-size:11px;letter-spacing:.16em;color:var(--gold-deep);margin-bottom:8px}
+.caution p{font-size:13px;line-height:1.95;color:var(--ink-soft)}
+
+.cta{display:inline-block;margin-top:22px;background:var(--panel);color:var(--gold-light);font-size:12.5px;letter-spacing:.12em;text-decoration:none;padding:15px 34px;border-radius:999px;transition:.2s}
+.cta:hover{background:var(--panel-2)}
+.cta.ghost{background:transparent;color:var(--gold-deep);border:1px solid var(--gold)}
+.cta.ghost:hover{background:rgba(184,148,74,.07)}
+
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:22px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--line)}
+.shots img{width:100%;height:150px;object-fit:cover;display:block}
+
+/* ---------- contact ---------- */
+.contact{margin:44px 0 0;text-align:center;border-top:1px solid var(--line);padding-top:44px}
+.contact h3{font-size:16px;letter-spacing:.08em;margin-bottom:12px}
+.contact p{font-size:13.5px;line-height:2;color:var(--ink-soft)}
+.links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+
+/* ---------- footer ---------- */
+footer{margin-top:64px;background:var(--panel);color:rgba(255,255,255,.55);text-align:center;padding:40px 24px 44px}
+footer .fb{font-family:"Cormorant Garamond",serif;font-size:16px;letter-spacing:.2em;color:#fff}
+footer .fm{font-size:11.5px;line-height:2;margin-top:12px}
+footer .fc{font-size:9px;letter-spacing:.24em;color:rgba(255,255,255,.35);margin-top:16px}
+
+@media(max-width:600px){
+  .step{padding:28px 22px}
+  .hero{padding:56px 0 50px}
+  .shots img{height:112px}
+  .os-row{flex-direction:column;gap:2px}
+  .os-row .tag{width:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <a class="brand" href="https://biolis-clinic.github.io/biolis/ambassador/">BiOLiS <em>AMBASSADOR</em></a>
+    <div class="langs">
+      <button data-lang="ja" class="on">日本語</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="ko">한국어</button>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-i="heroEyebrow">HOW TO USE</div>
+    <h1>GUIDE</h1>
+    <div class="jp" data-i="heroTitle">ご利用ガイド</div>
+    <p class="lead" data-i="heroLead">アンバサダー専用ページの使い方をご案内いたします。ホーム画面への追加とご紹介の手順は、いずれも1分ほどで完了します。</p>
+  </div>
+</section>
+
+<div class="wrap sec">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="num"><b>01</b><span data-i="n1">HOME SCREEN</span></div>
+    <h2 data-i="t1">ホーム画面への追加</h2>
+    <p data-i="p1">専用ページを開いた状態で、下記の操作を行ってください。ホーム画面にBiOLiSのアイコンが追加され、アプリのようにワンタップでアクセスいただけます。</p>
+    <div class="device">
+      <img src="https://biolis-clinic.github.io/biolis/assets/icon-192.png" alt="BiOLiS">
+      <div class="os">
+        <div class="os-row"><div class="tag">iPhone</div><div data-i="ios">Safari で開き、共有ボタン（□↑）→「ホーム画面に追加」</div></div>
+        <div class="os-row"><div class="tag">Android</div><div data-i="aos">Chrome で開き、メニュー（︙）→「ホーム画面に追加」</div></div>
+      </div>
+    </div>
+    <div class="note" data-i="note1">※ 専用ページのURLは、クリニックよりメールでお送りしたものをご利用ください。ご本人様専用のリンクとなりますので、SNS等での公開投稿はお控えくださいませ。</div>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="num"><b>02</b><span data-i="n2">REFERRAL</span></div>
+    <h2 data-i="t2">ご紹介の方法</h2>
+    <p data-i="p2">ご紹介したい方に、以下いずれかの方法でお伝えください。紹介者名は自動で入力されます。</p>
+    <div class="ways">
+      <div class="way"><i>1</i><div><strong data-i="w1t">QRコードを読み取っていただく</strong><span data-i="w1d">専用ページ内のQRコードを、その場でスマートフォンのカメラで読み取っていただきます。</span></div></div>
+      <div class="way"><i>2</i><div><strong data-i="w2t">リンクを直接お送りいただく</strong><span data-i="w2d">専用ページの「BiOLiSを紹介する」リンクを、LINEなどでお送りいただきます。</span></div></div>
+    </div>
+    <div class="caution">
+      <b data-i="cauT">ご注意</b>
+      <p data-i="cauD">リンクをお送りいただくだけでは成約となりません。ご紹介先の方がリンクを開き、フォームにご記入・送信いただくところまでで1件のご紹介となります。</p>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="num"><b>03</b><span data-i="n3">PROGRAM</span></div>
+    <h2 data-i="t3">アンバサダープログラム紹介ページ</h2>
+    <p data-i="p3">プログラムの全体像をご覧いただける公式ページをご用意しております。制度の趣旨・特典・ご参加の流れ・よくあるご質問をまとめておりますので、ご紹介やご説明の際にお役立てくださいませ。</p>
+    <div class="shots">
+      <img src="https://biolis-clinic.github.io/biolis/ambassador/img/interior_1.jpg" alt="BiOLiS CLINIC RECEPTION">
+      <img src="https://biolis-clinic.github.io/biolis/ambassador/img/interior_3.jpg" alt="BiOLiS CLINIC LOUNGE">
+    </div>
+    <a class="cta" href="https://biolis-clinic.github.io/biolis/ambassador/" data-i="cta3">プログラムページを見る</a>
+  </div>
+
+  <div class="contact">
+    <h3 data-i="cT">お問い合わせ</h3>
+    <p data-i="cD">ご不明な点がございましたら、いつでもお気軽にご連絡くださいませ。</p>
+    <div class="links">
+      <a class="cta ghost" href="https://lin.ee/QX9Yiqv" data-i="cLine">LINEで相談</a>
+      <a class="cta ghost" href="https://instagram.com/biolisclinic" data-i="cIg">Instagram DM</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fb">BiOLiS CLINIC</div>
+  <div class="fm" data-i="fAddr">〒103-0028 東京都中央区八重洲1-3-18 VORT東京八重洲maxim 5F<br>受付 10:00–19:00 ｜ 東京駅 八重洲北口 徒歩3分</div>
+  <div class="fc">TOKYO YAESU</div>
+</footer>
+
+<script>
+const DICT = {
+  ja:{},
+  en:{
+    heroEyebrow:"HOW TO USE", heroTitle:"Ambassador Guide",
+    heroLead:"A short guide to using your personal ambassador page. Both adding it to your home screen and making a referral take about a minute.",
+    n1:"HOME SCREEN", t1:"Add to Home Screen",
+    p1:"With your personal page open, follow the steps below. A BiOLiS icon will be added to your home screen for one-tap access, just like an app.",
+    ios:"Open in Safari, tap the Share button (□↑) → “Add to Home Screen”",
+    aos:"Open in Chrome, tap the menu (︙) → “Add to Home screen”",
+    note1:"* Please use the personal page URL sent to you by the clinic. As the link is unique to you, we kindly ask that you refrain from posting it publicly on social media.",
+    n2:"REFERRAL", t2:"How to Refer",
+    p2:"Share BiOLiS with someone using either of the methods below. Your name is filled in automatically.",
+    w1t:"Have them scan your QR code", w1d:"Ask them to scan the QR code on your personal page with their smartphone camera.",
+    w2t:"Send them your link", w2d:"Send the “Refer BiOLiS” link from your personal page via LINE or any messaging app.",
+    cauT:"PLEASE NOTE",
+    cauD:"Sending the link alone does not count as a referral. A referral is complete only once the recipient opens the link and submits the form.",
+    n3:"PROGRAM", t3:"Program Overview Page",
+    p3:"An official page covering the whole programme is available — its purpose, rewards, how to join and frequently asked questions. Please feel free to use it when introducing or explaining BiOLiS.",
+    cta3:"View the programme page",
+    cT:"Contact", cD:"If you have any questions at all, please do not hesitate to get in touch.",
+    cLine:"Ask via LINE", cIg:"Instagram DM",
+    fAddr:"VORT Tokyo Yaesu maxim 5F, 1-3-18 Yaesu, Chuo-ku, Tokyo 103-0028<br>Reception 10:00–19:00 ｜ 3 min from Tokyo Station, Yaesu North Exit"
+  },
+  ko:{
+    heroEyebrow:"HOW TO USE", heroTitle:"앰배서더 이용 가이드",
+    heroLead:"앰배서더 전용 페이지 사용법을 안내해 드립니다. 홈 화면 추가와 소개 절차 모두 1분이면 완료됩니다.",
+    n1:"HOME SCREEN", t1:"홈 화면에 추가하기",
+    p1:"전용 페이지를 연 상태에서 아래 순서대로 진행해 주세요. 홈 화면에 BiOLiS 아이콘이 추가되어 앱처럼 한 번의 터치로 접속하실 수 있습니다.",
+    ios:"Safari로 열고 공유 버튼(□↑) → 「홈 화면에 추가」",
+    aos:"Chrome으로 열고 메뉴(︙) → 「홈 화면에 추가」",
+    note1:"※ 전용 페이지 URL은 클리닉에서 메일로 보내드린 주소를 사용해 주세요. 본인 전용 링크이므로 SNS 등에 공개적으로 게시하는 것은 삼가 부탁드립니다.",
+    n2:"REFERRAL", t2:"소개하는 방법",
+    p2:"소개하고 싶은 분께 아래 두 가지 방법 중 하나로 전달해 주세요. 소개자 성함은 자동으로 입력됩니다.",
+    w1t:"QR 코드를 스캔하도록 안내", w1d:"전용 페이지의 QR 코드를 상대방 스마트폰 카메라로 바로 읽도록 해주세요.",
+    w2t:"링크를 직접 전송", w2d:"전용 페이지의 「BiOLiS 소개하기」 링크를 LINE 등으로 보내주세요.",
+    cauT:"주의 사항",
+    cauD:"링크를 보내는 것만으로는 성약이 되지 않습니다. 소개받은 분이 링크를 열고 폼을 작성·전송하는 시점까지 완료되어야 1건의 소개로 인정됩니다.",
+    n3:"PROGRAM", t3:"앰배서더 프로그램 소개 페이지",
+    p3:"프로그램의 전체 내용을 확인하실 수 있는 공식 페이지를 마련했습니다. 제도의 취지·혜택·참여 절차·자주 묻는 질문을 정리해 두었으니 소개나 설명하실 때 활용해 주세요.",
+    cta3:"프로그램 페이지 보기",
+    cT:"문의", cD:"궁금한 점이 있으시면 언제든지 편하게 연락 주세요.",
+    cLine:"LINE으로 문의", cIg:"Instagram DM",
+    fAddr:"〒103-0028 도쿄도 주오구 야에스 1-3-18 VORT 도쿄야에스 maxim 5F<br>접수 10:00–19:00 ｜ 도쿄역 야에스 북쪽 출구 도보 3분"
+  }
+};
+const NODES = [...document.querySelectorAll('[data-i]')];
+NODES.forEach(n => DICT.ja[n.dataset.i] = n.innerHTML);
+const LANGS = {ja:'ja', en:'en', ko:'ko'};
+
+function setLang(l){
+  const d = DICT[l] || DICT.ja;
+  NODES.forEach(n => { if(d[n.dataset.i]) n.innerHTML = d[n.dataset.i]; });
+  document.documentElement.lang = LANGS[l];
+  document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  try{ localStorage.setItem('biolis_guide_lang', l); }catch(e){}
+}
+document.querySelectorAll('.langs button').forEach(b =>
+  b.addEventListener('click', () => setLang(b.dataset.lang))
+);
+(function init(){
+  let l = null;
+  try{ l = localStorage.getItem('biolis_guide_lang'); }catch(e){}
+  if(!l){
+    const n = (navigator.language || 'ja').toLowerCase();
+    l = n.startsWith('ko') ? 'ko' : n.startsWith('ja') ? 'ja' : 'en';
+  }
+  setLang(l);
+})();
+</script>
+</body>
+</html>
