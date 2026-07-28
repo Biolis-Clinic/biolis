@@ -224,6 +224,7 @@ function setLang(l){
 
 /* ---------- 简体中文 ---------- */
 L.zh = {"tag":"东京・八重洲｜医学美容皮肤科 × 医学美容外科","scan":"扫码即可推荐","refoff":"被推荐的贵宾可享 首次疗程 15％ 优惠","grpRef":"推荐","refmain":"推荐 BiOLiS","refline":"通过 LINE 发送推荐","refcopy":"复制推荐链接","grpRec":"大使招募","about":"关于大使项目","recline":"通过 LINE 发送招募","reccopy":"复制招募链接","fineT":"查看项目规定","fp1":"【成功推荐的定义】成功推荐 1 件＝被推荐的新客 1 位完成首次疗程与结算。回馈以首次结算金额为准，再次到访不予累计。","fp2":"【回馈比例】MEMBER 3％（1〜4 件）／SILVER 4％（5〜9 件）／GOLD 6％（10〜24 件）。MEMBER・SILVER 以院内点数回馈。GOLD 以上的现金报酬，仅支付给已签订业务委托合约的官方大使。","fp3":"【院内点数】以 1,000 日元为单位发放，可在余额范围内使用。有效期限至发放月起第 24 个月的月底（由较早发放的点数开始扣除，到期前将以邮件通知）。院内点数不可兑现或转让（GOLD 以上的现金报酬属于依业务委托合约的另一制度）。仅适用于自费诊疗。","fp4":"【等级标准】MEMBER 1 件〜／SILVER 5 件〜／GOLD 10 件〜（需面谈认定）。","fp5":"※ 内容可能有所变更。"};
+    Object.assign(L.zh,{mrSub:"回馈比例（院内点数）",copied:"已复制",lbl:"推荐成功",cum:"累计推荐成功",unit:" 件",next:function(t,k){return "距离 "+t+" 还差 "+k+" 件";},ms:function(m,k){return "距离下一个里程碑 "+m+" 件还差 "+k+" 件";}});
 try{ if((navigator.language||"").toLowerCase().indexOf("zh")===0) setLang("zh"); }catch(e){}
 </script>
 </body>
