@@ -444,8 +444,9 @@ document.addEventListener("click",function(e){
 },true);
 </script>
 <script>
-// route the Save Contact link through the generated vCard (language + photo)
-(function(){function bind(){var a=document.querySelector('a[href$=".vcf"]');if(!a||a.dataset.vcBound)return;a.dataset.vcBound='1';a.addEventListener('click',function(e){if(typeof saveVCard!=='function')return;e.preventDefault();try{saveVCard();}catch(err){window.location.href=a.getAttribute('href');}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',bind);}else{bind();}})();
+// point Save Contact at the vCard matching the displayed language (one tap, no download)
+(function(){function pick(){var lg=(document.documentElement.lang||'ja').slice(0,2);if(lg!=='ja'&&lg!=='ko'&&lg!=='en')lg='ja';var a=document.querySelector('a[href$=".vcf"]');if(a)a.setAttribute('href','patrick_'+lg+'.vcf');}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',pick);}else{pick();}var _sl=window.setLang;if(typeof _sl==='function'){window.setLang=function(l){var r=_sl.apply(this,arguments);try{pick();}catch(e){}return r;};}})();
 </script>
+
 </body>
 </html>
