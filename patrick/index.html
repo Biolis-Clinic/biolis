@@ -443,5 +443,9 @@ document.addEventListener("click",function(e){
   try{gtag("event","card_click",{card:"patrick",item:String(key).slice(0,40)});}catch(_){}
 },true);
 </script>
+<script>
+// route the Save Contact link through the generated vCard (language + photo)
+(function(){function bind(){var a=document.querySelector('a[href$=".vcf"]');if(!a||a.dataset.vcBound)return;a.dataset.vcBound='1';a.addEventListener('click',function(e){if(typeof saveVCard!=='function')return;e.preventDefault();try{saveVCard();}catch(err){window.location.href=a.getAttribute('href');}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',bind);}else{bind();}})();
+</script>
 </body>
 </html>
