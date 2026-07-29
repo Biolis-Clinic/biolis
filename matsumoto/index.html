@@ -357,6 +357,10 @@ function buildVCard(){
    "X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/biolisclinic","END:VCARD"
   ].join("\r\n");
 }
+// language-aware vCard (name/title follow the selected language)
+var __vcBase=buildVCard;
+buildVCard=function(){var v=__vcBase();try{var t=(typeof I!=='undefined'&&typeof lang!=='undefined')?I[lang]:null;if(!t||!t.name)return v;var full=String(t.name).trim(),p=full.split(/\s+/),fam,giv;if(typeof lang!=='undefined'&&lang==='en'){giv=p[0]||'';fam=p.slice(1).join(' ');}else{fam=p[0]||'';giv=p.slice(1).join(' ');}v=v.replace(/^FN:[^\r\n]*/m,'FN:'+full).replace(/^N:[^\r\n]*/m,'N:'+fam+';'+giv+';;;');if(t.title)v=v.replace(/^TITLE:[^\r\n]*/m,'TITLE:'+String(t.title).trim());}catch(e){}return v;};
+
 function isInApp(){
   var ua=(navigator.userAgent||navigator.vendor||"").toLowerCase();
   return /line|kakaotalk|instagram|fban|fbav|fb_iab|naver|daum|whatsapp|wechat|micromessenger/.test(ua);
