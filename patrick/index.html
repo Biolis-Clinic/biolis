@@ -453,7 +453,7 @@ document.addEventListener("click",function(e){
 (function(){try{
 if(typeof I==='undefined')return;
 I.zh={"call":"电话","email":"邮件","line":"LINE 预约","ig":"Instagram","map":"交通指南","web":"官方网站","save":"保存联系人","title":"全球事业开发（GBD）· 公关","tagline":"设计「未来的美丽与健康」","foot":"〒103-0028 东京都中央区八重洲1-3-18 VORT东京八重洲maxim 5F<br>接待 10:00–19:00 ｜ 东京站八重洲北口 步行3分 · 日本桥站 步行2分","qrcap":"扫码打开电子名片","qrlp":"长按图片保存到相册","qrsave":"保存二维码","qrhint":"点击放大","qrclose":"关闭","flip":"点击翻面","docs":"医生介绍","event":"特别活动","evbadge":"进行中","secMain":"主要","secContact":"联系方式","secRef":"推荐","secShare":"分享","secMore":"更多","sharecard":"分享此名片","referral":"推荐表单","refcopy":"复制链接","recshare":"通过 LINE 招募","reccopy":"复制招募链接","refcopied":"已复制","shareline":"通过 LINE 分享","cardcopy":"复制我的名片","ambrecruit":"成为大使","shttl":"请在浏览器中打开","shtxt":"应用内浏览器无法保存联系人。请点击右上角菜单，选择「在浏览器中打开」（Safari / Chrome）后重试。","shcopy":"复制链接","shclose":"关闭","nameMain":"Patrick Noh","nameSub":"帕特里克·卢"};
-if(typeof CARDS!=='undefined'&&CARDS.en)CARDS.zh=CARDS.en;
+if(typeof CARDS!=='undefined'&&CARDS.ja)CARDS.zh=CARDS.ja;
 var box=document.querySelector('.lang');
 if(box&&!box.querySelector('[data-zh]')){var b=document.createElement('button');b.setAttribute('data-zh','1');b.setAttribute('data-l','zh');b.textContent='\u4E2D\u6587';b.setAttribute('onclick',"setLang('zh')");box.appendChild(b);}
 if(typeof detectLang==='function'){var _d=detectLang;window.detectLang=function(){var n=(navigator.language||'').toLowerCase();if(n.indexOf('zh')===0)return 'zh';return _d.apply(this,arguments);};}
