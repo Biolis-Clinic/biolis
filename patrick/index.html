@@ -80,24 +80,25 @@ gtag('js',new Date());gtag('config','G-0TD03G8G4Q');
   .flip-face img{width:100%; height:100%; object-fit:cover; display:block;}
   .flip-back{transform:rotateY(180deg);}
 /* ---- Simplified Chinese card faces (HTML) ---- */
-.zhface{display:none;background:#FCFBF8;font-size:2.84px;}
-html[lang="zh"] .zhface{display:block;}
-html[lang="zh"] img.flip-face{display:none;}
-.zhf-in{position:absolute;inset:0;padding:7.5em 8em;display:flex;flex-direction:column;text-align:left;}
-.zhf-top{display:flex;align-items:flex-start;justify-content:space-between;gap:2em;}
-.zhf-logo{width:44em;height:auto;display:block;flex:none;}
-.zhf-org{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.4em;letter-spacing:.1em;color:#6E6455;white-space:nowrap;padding-top:.6em;}
-.zhf-name{font-family:"Noto Serif SC","Noto Serif JP",serif;font-weight:500;font-size:6.6em;letter-spacing:.14em;color:#2E2820;margin-top:.62em;line-height:1.1;}
-.zhf-rom{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-weight:600;font-size:2.5em;letter-spacing:.34em;color:#C1A25E;margin-top:.9em;}
-.zhf-title{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.5em;letter-spacing:.03em;color:#3C362D;margin-top:.55em;}
-.zhf-btm{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:2em;}
-.zhf-contact{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.35em;color:#3C362D;white-space:nowrap;}
-.zhf-qr{width:13em;height:13em;display:block;flex:none;}
-.zhb-in{position:absolute;inset:0;padding:7em;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
-.zhb-logo{width:34em;height:auto;display:block;}
-.zhb-tag{font-family:"Noto Serif SC","Noto Serif JP",serif;font-size:3em;letter-spacing:.2em;color:#6E6455;margin-top:1.6em;}
-.zhb-addr{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.35em;color:#3C362D;margin-top:1.9em;}
-.zhb-line{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.35em;color:#3C362D;margin-top:1em;}
+  .zhface{display:none;background:#FCFBF8;overflow:hidden;}
+  html[lang="zh"] .zhface{display:block;}
+  html[lang="zh"] img.flip-face{display:none;}
+  .zhcv{position:absolute;top:0;left:0;width:910px;height:550px;transform-origin:0 0;}
+  .zhf-in{position:absolute;inset:0;padding:62px 70px;display:flex;flex-direction:column;text-align:left;}
+  .zhf-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+  .zhf-logo{width:300px!important;height:auto!important;max-width:none!important;display:block;flex:none;}
+  .zhf-org{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:16px;letter-spacing:1.5px;color:#6E6455;white-space:nowrap;padding-top:8px;}
+  .zhf-name{font-family:"Noto Serif SC","Noto Serif JP",serif;font-weight:500;font-size:58px;letter-spacing:7px;color:#2E2820;margin-top:40px;line-height:1.1;}
+  .zhf-rom{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-weight:600;font-size:18px;letter-spacing:6px;color:#C1A25E;margin-top:16px;}
+  .zhf-title{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:20px;letter-spacing:.5px;color:#3C362D;margin-top:12px;}
+  .zhf-btm{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;}
+  .zhf-contact{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:18px;color:#3C362D;white-space:nowrap;padding-bottom:6px;}
+  .zhf-qr{width:92px!important;height:92px!important;max-width:none!important;display:block;flex:none;}
+  .zhb-in{position:absolute;inset:0;padding:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .zhb-logo{width:330px!important;height:auto!important;max-width:none!important;display:block;}
+  .zhb-tag{font-family:"Noto Serif SC","Noto Serif JP",serif;font-size:23px;letter-spacing:4px;color:#6E6455;margin-top:28px;}
+  .zhb-addr{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:18px;color:#3C362D;margin-top:32px;line-height:1.75;max-width:640px;}
+  .zhb-line{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:18px;color:#3C362D;margin-top:12px;}
 
   .flip-hint{text-align:center; font-size:10.5px; letter-spacing:1px; color:var(--mut); margin-top:10px;}
   .flip-hint svg{width:12px; height:12px; vertical-align:-2px; stroke:var(--gold-dk); fill:none; stroke-width:1.7; margin-right:4px;}
@@ -487,24 +488,24 @@ if(typeof setLang==='function')setLang(detectLang());
 var inner=document.querySelector('.flip-inner'); if(!inner||inner.querySelector('.zhface'))return;
 var EM='patrick@biolisclinic.com', TEL='070-8909-0556';
 var f=document.createElement('div'); f.className='flip-face flip-front zhface';
-f.innerHTML='<div class="zhf-in">'
+f.innerHTML='<div class="zhcv"><div class="zhf-in">'
  +'<div class="zhf-top"><img class="zhf-logo" src="img/logo.png" alt="BiOLiS CLINIC"><div class="zhf-org">\u533B\u7597\u6CD5\u4EBA\u6A31\u4F1A</div></div>'
  +'<div class="zhf-name">\u5E15\u7279\u91CC\u514B\u00B7\u5362</div>'
  +'<div class="zhf-rom">PATRICK NOH</div>'
  +'<div class="zhf-title">\u5168\u7403\u4E8B\u4E1A\u5F00\u53D1\uFF08GBD\uFF09\u00B7 \u516C\u5173</div>'
  +'<div class="zhf-btm"><div class="zhf-contact">'+EM+'\u2003\u00B7\u2003'+TEL+'</div>'
  +'<img class="zhf-qr" src="img/qr.png" alt="QR"></div>'
- +'</div>';
+ +'</div></div>';
 var b=document.createElement('div'); b.className='flip-face flip-back zhface';
-b.innerHTML='<div class="zhb-in">'
+b.innerHTML='<div class="zhcv"><div class="zhb-in">'
  +'<img class="zhb-logo" src="img/logo.png" alt="BiOLiS CLINIC">'
  +'<div class="zhb-tag">\u8BBE\u8BA1\u300C\u672A\u6765\u7684\u7F8E\u4E3D\u4E0E\u5065\u5EB7\u300D</div>'
  +'<div class="zhb-addr">\u4E1C\u4EAC\u90FD\u4E2D\u592E\u533A\u516B\u91CD\u6D321-3-18 VORT\u4E1C\u4EAC\u516B\u91CD\u6D32maxim 5F</div>'
  +'<div class="zhb-line">TEL 03-6262-2677\u2003\u00B7\u2003biolisclinic.com\u2003\u00B7\u2003@biolisclinic</div>'
- +'</div>';
+ +'</div></div>';
 inner.appendChild(f); inner.appendChild(b);
 function scaleZh(){try{var w=inner.clientWidth; if(!w)return;
- [f,b].forEach(function(el){el.style.fontSize=(w/100)+'px';});
+ var s=w/910;[f,b].forEach(function(el){var q=el.querySelector('.zhcv');if(q)q.style.transform='scale('+s+')';});
 }catch(e){}}
 scaleZh(); window.addEventListener('resize',scaleZh);
 var _sl=window.setLang; if(typeof _sl==='function'){window.setLang=function(){var q=_sl.apply(this,arguments);setTimeout(scaleZh,0);return q;};}
