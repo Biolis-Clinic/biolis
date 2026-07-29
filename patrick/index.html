@@ -359,7 +359,9 @@ function buildVCard(){
 }
 // language-aware vCard (name/title follow the selected language)
 var __vcBase=buildVCard;
-buildVCard=function(){var v=__vcBase();try{var lg=(document.documentElement.lang||'ja').slice(0,2);if(lg!=='ja'&&lg!=='ko'&&lg!=='en')lg='ja';var t=(typeof I!=='undefined')?I[lg]:null;if(!t||!t.nameMain)return v;var full=String(t.nameMain).trim(),fam,giv;if(full.indexOf('\u30FB')>=0){var q=full.split('\u30FB');giv=q[0]||'';fam=q.slice(1).join('\u30FB');}else{var p=full.split(/\s+/);if(p.length<2){fam=full;giv='';}else if(lg==='en'){giv=p[0];fam=p.slice(1).join(' ');}else{fam=p[0];giv=p.slice(1).join(' ');}}v=v.replace(/^FN:[^\r\n]*/m,'FN:'+full).replace(/^N:[^\r\n]*/m,'N:'+fam+';'+giv+';;;');if(t.title)v=v.replace(/^TITLE:[^\r\n]*/m,'TITLE:'+String(t.title).trim());}catch(e){}return v;};
+var __vcPhoto='';
+(function(){try{fetch('https://biolis-clinic.github.io/biolis/assets/icon-192.png').then(function(r){return r.blob();}).then(function(b){return new Promise(function(res,rej){var fr=new FileReader();fr.onload=function(){res(fr.result);};fr.onerror=rej;fr.readAsDataURL(b);});}).then(function(d){__vcPhoto=String(d).split(',')[1]||'';}).catch(function(){});}catch(e){}})();
+buildVCard=function(){var v=__vcBase();try{var lg=(document.documentElement.lang||'ja').slice(0,2);if(lg!=='ja'&&lg!=='ko'&&lg!=='en')lg='ja';var t=(typeof I!=='undefined')?I[lg]:null;if(!t||!t.nameMain)return v;var full=String(t.nameMain).trim(),fam,giv;if(full.indexOf('\u30FB')>=0){var q=full.split('\u30FB');giv=q[0]||'';fam=q.slice(1).join('\u30FB');}else{var p=full.split(/\s+/);if(p.length<2){fam=full;giv='';}else if(lg==='en'){giv=p[0];fam=p.slice(1).join(' ');}else{fam=p[0];giv=p.slice(1).join(' ');}}v=v.replace(/^FN:[^\r\n]*/m,'FN:'+full).replace(/^N:[^\r\n]*/m,'N:'+fam+';'+giv+';;;');if(t.title)v=v.replace(/^TITLE:[^\r\n]*/m,'TITLE:'+String(t.title).trim());}catch(e){}try{if(__vcPhoto&&!/^PHOTO/m.test(v)){var ph=('PHOTO;ENCODING=b;TYPE=PNG:'+__vcPhoto).match(/.{1,74}/g).join('\r\n ');v=v.replace('END:VCARD',ph+'\r\nEND:VCARD');}}catch(e){}return v;};
 
 function isInApp(){
   var ua=(navigator.userAgent||navigator.vendor||"").toLowerCase();
