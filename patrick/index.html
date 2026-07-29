@@ -80,25 +80,26 @@ gtag('js',new Date());gtag('config','G-0TD03G8G4Q');
   .flip-face img{width:100%; height:100%; object-fit:cover; display:block;}
   .flip-back{transform:rotateY(180deg);}
 /* ---- Simplified Chinese card faces (HTML) ---- */
-  .zhface{display:none;background:#FCFBF8;overflow:hidden;}
+  .flip{container-type:inline-size;}
+  .zhface{display:none;background:#FCFBF8;overflow:hidden;--u:calc(100cqw / 910);}
   html[lang="zh"] .zhface{display:block;}
   html[lang="zh"] img.flip-face{display:none;}
-  .zhcv{position:absolute;top:0;left:0;width:910px;height:550px;transform-origin:0 0;}
-  .zhf-in{position:absolute;inset:0;padding:67px 70px 66px 90px;display:flex;flex-direction:column;text-align:left;}
-  .zhf-top{display:flex;align-items:center;justify-content:space-between;gap:20px;}
-  .zhf-logo{width:440px!important;height:auto!important;max-width:none!important;display:block;flex:none;}
-  .zhf-org{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:16px;letter-spacing:4px;color:#6E6455;white-space:nowrap;}
-  .zhf-name{font-family:"Noto Serif SC","Noto Serif JP",serif;font-weight:500;font-size:52px;letter-spacing:5px;color:#2E2820;margin-top:90px;line-height:1.1;}
-  .zhf-rom{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-weight:600;font-size:21px;letter-spacing:8px;color:#C1A25E;margin-top:45px;}
-  .zhf-title{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:21px;letter-spacing:.5px;color:#3C362D;margin-top:17px;}
-  .zhf-btm{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;}
-  .zhf-contact{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:21px;color:#3C362D;white-space:nowrap;}
-  .zhf-qr{width:92px!important;height:92px!important;max-width:none!important;display:block;flex:none;}
-  .zhb-in{position:absolute;inset:0;padding:40px 60px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
-  .zhb-logo{width:124px!important;height:auto!important;max-width:none!important;display:block;}
-  .zhb-tag{font-family:"Noto Serif SC","Noto Serif JP",serif;font-size:24px;letter-spacing:9px;color:#6E6455;margin-top:38px;text-indent:9px;}
-  .zhb-addr{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:21px;color:#3C362D;margin-top:52px;line-height:1.6;max-width:720px;}
-  .zhb-line{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:21px;color:#3C362D;margin-top:30px;}
+  .zhcv{position:absolute;inset:0;}
+  .zhf-in{position:absolute;inset:0;padding:calc(67*var(--u)) calc(70*var(--u)) calc(66*var(--u)) calc(90*var(--u));display:flex;flex-direction:column;text-align:left;}
+  .zhf-top{display:flex;align-items:center;justify-content:space-between;gap:calc(20*var(--u));}
+  .zhf-logo{width:calc(440*var(--u))!important;height:auto!important;max-width:none!important;display:block;flex:none;}
+  .zhf-org{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:calc(16*var(--u));letter-spacing:calc(4*var(--u));color:#6E6455;white-space:nowrap;}
+  .zhf-name{font-family:"Noto Serif SC","Noto Serif JP",serif;font-weight:500;font-size:calc(52*var(--u));letter-spacing:calc(5*var(--u));color:#2E2820;margin-top:calc(90*var(--u));line-height:1.1;}
+  .zhf-rom{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-weight:600;font-size:calc(21*var(--u));letter-spacing:calc(8*var(--u));color:#C1A25E;margin-top:calc(45*var(--u));}
+  .zhf-title{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:calc(21*var(--u));letter-spacing:calc(0.5*var(--u));color:#3C362D;margin-top:calc(17*var(--u));}
+  .zhf-btm{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:calc(20*var(--u));}
+  .zhf-contact{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:calc(21*var(--u));color:#3C362D;white-space:nowrap;}
+  .zhf-qr{width:calc(92*var(--u))!important;height:calc(92*var(--u))!important;max-width:none!important;display:block;flex:none;}
+  .zhb-in{position:absolute;inset:0;padding:calc(40*var(--u)) calc(60*var(--u));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .zhb-logo{width:calc(124*var(--u))!important;height:auto!important;max-width:none!important;display:block;}
+  .zhb-tag{font-family:"Noto Serif SC","Noto Serif JP",serif;font-size:calc(24*var(--u));letter-spacing:calc(9*var(--u));text-indent:calc(9*var(--u));color:#6E6455;margin-top:calc(38*var(--u));}
+  .zhb-addr{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:calc(21*var(--u));color:#3C362D;margin-top:calc(52*var(--u));line-height:1.6;max-width:calc(720*var(--u));}
+  .zhb-line{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:calc(21*var(--u));color:#3C362D;margin-top:calc(30*var(--u));}
 
   .flip-hint{text-align:center; font-size:10.5px; letter-spacing:1px; color:var(--mut); margin-top:10px;}
   .flip-hint svg{width:12px; height:12px; vertical-align:-2px; stroke:var(--gold-dk); fill:none; stroke-width:1.7; margin-right:4px;}
@@ -505,9 +506,9 @@ b.innerHTML='<div class="zhcv"><div class="zhb-in">'
  +'</div></div>';
 inner.appendChild(f); inner.appendChild(b);
 function scaleZh(){try{var w=inner.clientWidth; if(!w)return;
- var s=w/910;[f,b].forEach(function(el){var q=el.querySelector('.zhcv');if(q)q.style.transform='scale('+s+')';});
+ if(window.CSS&&CSS.supports&&CSS.supports('container-type','inline-size'))return;var s=(w/910)+'px';[f,b].forEach(function(el){el.style.setProperty('--u',s);});
 }catch(e){}}
-scaleZh(); window.addEventListener('resize',scaleZh);
+scaleZh(); window.addEventListener('resize',scaleZh);try{if(window.ResizeObserver)new ResizeObserver(scaleZh).observe(inner);}catch(e){}setTimeout(scaleZh,300);setTimeout(scaleZh,1500);
 var _sl=window.setLang; if(typeof _sl==='function'){window.setLang=function(){var q=_sl.apply(this,arguments);setTimeout(scaleZh,0);return q;};}
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(scaleZh);
 }catch(e){}})();
