@@ -80,24 +80,24 @@ gtag('js',new Date());gtag('config','G-0TD03G8G4Q');
   .flip-face img{width:100%; height:100%; object-fit:cover; display:block;}
   .flip-back{transform:rotateY(180deg);}
 /* ---- Simplified Chinese card faces (HTML) ---- */
-.zhface{display:none;container-type:inline-size;background:#FCFBF8;}
+.zhface{display:none;background:#FCFBF8;font-size:2.84px;}
 html[lang="zh"] .zhface{display:block;}
 html[lang="zh"] img.flip-face{display:none;}
-.zhf-in{position:absolute;inset:0;padding:7.5cqw 8cqw;display:flex;flex-direction:column;}
-.zhf-top{display:flex;align-items:flex-start;justify-content:space-between;}
-.zhf-logo{width:46cqw;height:auto;display:block;}
-.zhf-org{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.05cqw;letter-spacing:.14em;color:#6E6455;white-space:nowrap;padding-top:.8cqw;}
-.zhf-name{font-family:"Noto Serif SC","Noto Serif JP",serif;font-weight:500;font-size:5.6cqw;letter-spacing:.16em;color:#2E2820;margin-top:5.2cqw;}
-.zhf-rom{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-weight:600;font-size:2.15cqw;letter-spacing:.34em;color:#C1A25E;margin-top:2.6cqw;}
-.zhf-title{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.15cqw;letter-spacing:.04em;color:#3C362D;margin-top:1.5cqw;}
-.zhf-btm{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;}
-.zhf-contact{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.0cqw;letter-spacing:.02em;color:#3C362D;white-space:nowrap;}
-.zhf-qr{width:12.5cqw;height:12.5cqw;display:block;}
-.zhb-in{position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
-.zhb-logo{width:30cqw;height:auto;display:block;}
-.zhb-tag{font-family:"Noto Serif SC","Noto Serif JP",serif;font-size:2.6cqw;letter-spacing:.22em;color:#6E6455;margin-top:4.5cqw;}
-.zhb-addr{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.0cqw;letter-spacing:.02em;color:#3C362D;margin-top:4.2cqw;}
-.zhb-line{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.0cqw;letter-spacing:.02em;color:#3C362D;margin-top:2.2cqw;}
+.zhf-in{position:absolute;inset:0;padding:7.5em 8em;display:flex;flex-direction:column;text-align:left;}
+.zhf-top{display:flex;align-items:flex-start;justify-content:space-between;gap:2em;}
+.zhf-logo{width:44em;height:auto;display:block;flex:none;}
+.zhf-org{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.4em;letter-spacing:.1em;color:#6E6455;white-space:nowrap;padding-top:.6em;}
+.zhf-name{font-family:"Noto Serif SC","Noto Serif JP",serif;font-weight:500;font-size:6.6em;letter-spacing:.14em;color:#2E2820;margin-top:.62em;line-height:1.1;}
+.zhf-rom{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-weight:600;font-size:2.5em;letter-spacing:.34em;color:#C1A25E;margin-top:.9em;}
+.zhf-title{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.5em;letter-spacing:.03em;color:#3C362D;margin-top:.55em;}
+.zhf-btm{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:2em;}
+.zhf-contact{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.35em;color:#3C362D;white-space:nowrap;}
+.zhf-qr{width:13em;height:13em;display:block;flex:none;}
+.zhb-in{position:absolute;inset:0;padding:7em;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.zhb-logo{width:34em;height:auto;display:block;}
+.zhb-tag{font-family:"Noto Serif SC","Noto Serif JP",serif;font-size:3em;letter-spacing:.2em;color:#6E6455;margin-top:1.6em;}
+.zhb-addr{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.35em;color:#3C362D;margin-top:1.9em;}
+.zhb-line{font-family:"Noto Sans SC","Noto Sans JP",sans-serif;font-size:2.35em;color:#3C362D;margin-top:1em;}
 
   .flip-hint{text-align:center; font-size:10.5px; letter-spacing:1px; color:var(--mut); margin-top:10px;}
   .flip-hint svg{width:12px; height:12px; vertical-align:-2px; stroke:var(--gold-dk); fill:none; stroke-width:1.7; margin-right:4px;}
@@ -503,6 +503,12 @@ b.innerHTML='<div class="zhb-in">'
  +'<div class="zhb-line">TEL 03-6262-2677\u2003\u00B7\u2003biolisclinic.com\u2003\u00B7\u2003@biolisclinic</div>'
  +'</div>';
 inner.appendChild(f); inner.appendChild(b);
+function scaleZh(){try{var w=inner.clientWidth; if(!w)return;
+ [f,b].forEach(function(el){el.style.fontSize=(w/100)+'px';});
+}catch(e){}}
+scaleZh(); window.addEventListener('resize',scaleZh);
+var _sl=window.setLang; if(typeof _sl==='function'){window.setLang=function(){var q=_sl.apply(this,arguments);setTimeout(scaleZh,0);return q;};}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(scaleZh);
 }catch(e){}})();
 </script>
 </body>
