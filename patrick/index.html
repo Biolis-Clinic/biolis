@@ -460,5 +460,26 @@ if(typeof detectLang==='function'){var _d=detectLang;window.detectLang=function(
 if(typeof setLang==='function')setLang(detectLang());
 }catch(e){}})();
 </script>
+<script>
+// keep the footer address on a single line on any screen width
+(function(){
+function fitFoot(){try{
+ var f=document.querySelector('.foot'); if(!f) return;
+ var s=f.querySelector('.foot-addr');
+ if(!s){var w=document.createTreeWalker(f,NodeFilter.SHOW_TEXT),n=null;
+  while(w.nextNode()){if(w.currentNode.textContent.trim().length>10){n=w.currentNode;break;}}
+  if(!n)return; s=document.createElement('span'); s.className='foot-addr';
+  n.parentNode.insertBefore(s,n); s.appendChild(n);}
+ s.style.whiteSpace='nowrap'; s.style.display='inline-block'; s.style.fontSize='';
+ var avail=f.clientWidth; if(!avail) return;
+ var size=parseFloat(getComputedStyle(s).fontSize)||11, guard=0;
+ while(s.scrollWidth>avail && size>7.5 && guard++<24){ size-=0.25; s.style.fontSize=size+'px'; }
+}catch(e){}}
+window.__fitFoot=fitFoot;
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fitFoot);}else{fitFoot();}
+window.addEventListener('resize',fitFoot);
+var _s=window.setLang;if(typeof _s==='function'){window.setLang=function(){var r=_s.apply(this,arguments);setTimeout(fitFoot,0);return r;};}
+})();
+</script>
 </body>
 </html>
