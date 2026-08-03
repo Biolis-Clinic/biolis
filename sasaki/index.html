@@ -201,4 +201,5 @@ function saveVCard(){var v=buildVCard();var blob=new Blob([v],{type:"text/vcard;
 function openQR(){document.getElementById("qrmodal-img").src=document.querySelector(".qrimg").src;document.getElementById("qrmodal").classList.add("on");}
 function closeQR(){document.getElementById("qrmodal").classList.remove("on");}
 function downloadQR(){const a=document.createElement("a");a.href=document.querySelector(".qrimg").src;a.download="BiOLiS_QR_Sasaki.png";document.body.appendChild(a);a.click();a.remove();}
-</script></body></html>
+</script><script src="../assets/doctor-zh.js" defer></script>
+</body></html>
