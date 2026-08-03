@@ -136,6 +136,89 @@
         };
       }
 
+      /* ---------- 6b. Simplified-Chinese card faces (HTML) ---------- */
+      (function buildZhFaces() {
+        var inner = document.querySelector('.flip-inner');
+        if (!inner || inner.querySelector('.zhface')) return;
+
+        var css = document.createElement('style');
+        var u = function (n) { return 'calc(' + n + '*var(--u))'; };
+        var SANS = '"Noto Sans SC","Noto Sans JP",sans-serif';
+        var SERIF = '"Noto Serif SC","Noto Serif JP",serif';
+        css.textContent =
+          '.flip{container-type:inline-size;}' +
+          '.zhface{display:none;background:#FCFBF8;overflow:hidden;--u:calc(100cqw / 910);}' +
+          'html[lang="zh"] .zhface{display:block;}' +
+          'html[lang="zh"] .flip-face:not(.zhface){display:none;}' +
+          '.zhcv{position:absolute;inset:0;}' +
+          '.zhf-in{position:absolute;inset:0;padding:' + u(67) + ' ' + u(70) + ' ' + u(66) + ' ' + u(90) + ';display:flex;flex-direction:column;text-align:left;}' +
+          '.zhf-top{display:flex;align-items:center;justify-content:space-between;gap:' + u(20) + ';}' +
+          '.zhf-logo{width:' + u(440) + '!important;height:auto!important;max-width:none!important;display:block;flex:none;}' +
+          '.zhf-org{font-family:' + SANS + ';font-size:' + u(16) + ';letter-spacing:' + u(4) + ';color:#6E6455;white-space:nowrap;}' +
+          '.zhf-name{font-family:' + SERIF + ';font-weight:500;font-size:' + u(58) + ';letter-spacing:' + u(6) + ';color:#2E2820;margin-top:' + u(86) + ';line-height:1.1;}' +
+          '.zhf-title{font-family:' + SANS + ';font-size:' + u(24) + ';letter-spacing:' + u(0.5) + ';color:#6E6455;margin-top:' + u(30) + ';}' +
+          '.zhf-btm{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:' + u(20) + ';}' +
+          '.zhf-contact{font-family:' + SANS + ';font-size:' + u(21) + ';color:#3C362D;white-space:nowrap;}' +
+          '.zhf-qr{width:' + u(90) + '!important;height:' + u(90) + '!important;max-width:none!important;display:block;flex:none;}' +
+          '.zhb-in{position:absolute;inset:0;padding:' + u(40) + ' ' + u(60) + ';display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}' +
+          '.zhb-logo{width:' + u(124) + '!important;height:auto!important;max-width:none!important;display:block;}' +
+          '.zhb-tag{font-family:' + SERIF + ';font-size:' + u(24) + ';letter-spacing:' + u(9) + ';text-indent:' + u(9) + ';color:#6E6455;margin-top:' + u(38) + ';}' +
+          '.zhb-addr{font-family:' + SANS + ';font-size:' + u(21) + ';color:#3C362D;margin-top:' + u(52) + ';line-height:1.6;max-width:' + u(720) + ';}' +
+          '.zhb-line{font-family:' + SANS + ';font-size:' + u(21) + ';color:#3C362D;margin-top:' + u(30) + ';}';
+        document.head.appendChild(css);
+
+        var fonts = document.createElement('link');
+        fonts.rel = 'stylesheet';
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&family=Noto+Sans+SC:wght@400;500&display=swap';
+        document.head.appendChild(fonts);
+
+        var A = 'https://biolis-clinic.github.io/biolis/assets/';
+        var qrEl = document.querySelector('.qrimg');
+        var qr = qrEl ? qrEl.getAttribute('src') : A + 'icon-192.png';
+        var mail = (D && D.slug ? D.slug : '') + '@biolisclinic.com';
+        var tel = '03-6262-2677';
+        var name = (D && D.name) || '';
+        var cred = (D && D.cred && D.cred.zh) || '';
+
+        var f = document.createElement('div');
+        f.className = 'flip-face flip-front zhface';
+        f.innerHTML = '<div class="zhcv"><div class="zhf-in">' +
+          '<div class="zhf-top"><img class="zhf-logo" src="' + A + 'logo-h.png" alt="BiOLiS CLINIC">' +
+          '<div class="zhf-org">医疗法人樱会</div></div>' +
+          '<div class="zhf-name">' + name + '</div>' +
+          '<div class="zhf-title">' + cred + '</div>' +
+          '<div class="zhf-btm"><div class="zhf-contact">' + mail + '　·　' + tel + '</div>' +
+          '<img class="zhf-qr" src="' + qr + '" alt="QR"></div>' +
+          '</div></div>';
+
+        var b = document.createElement('div');
+        b.className = 'flip-face flip-back zhface';
+        b.innerHTML = '<div class="zhcv"><div class="zhb-in">' +
+          '<img class="zhb-logo" src="' + A + 'logo-v.png" alt="BiOLiS CLINIC">' +
+          '<div class="zhb-tag">设计「未来的美丽与健康」</div>' +
+          '<div class="zhb-addr">东京都中央区八重洲1-3-18 VORT东京八重洲maxim 5F</div>' +
+          '<div class="zhb-line">TEL 03-6262-2677　·　biolisclinic.com　·　@biolisclinic</div>' +
+          '</div></div>';
+
+        inner.appendChild(f);
+        inner.appendChild(b);
+
+        /* fallback for browsers without container queries */
+        function scaleZh() {
+          try {
+            if (window.CSS && CSS.supports && CSS.supports('container-type', 'inline-size')) return;
+            var w = inner.clientWidth || inner.getBoundingClientRect().width;
+            if (!w) return;
+            var s = (w / 910) + 'px';
+            [f, b].forEach(function (el) { el.style.setProperty('--u', s); });
+          } catch (e) {}
+        }
+        scaleZh();
+        window.addEventListener('resize', scaleZh);
+        try { if (window.ResizeObserver) new ResizeObserver(scaleZh).observe(inner); } catch (e) {}
+        setTimeout(scaleZh, 300); setTimeout(scaleZh, 1500);
+      })();
+
       /* ---------- 7. swap the .vcf file by language ---------- */
       function pick() {
         var lg = (document.documentElement.lang || 'ja').slice(0, 2);
