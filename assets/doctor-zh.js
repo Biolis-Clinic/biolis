@@ -175,6 +175,47 @@
         var A = 'https://biolis-clinic.github.io/biolis/assets/';
         var qrEl = document.querySelector('.qrimg');
         var qr = qrEl ? qrEl.getAttribute('src') : A + 'icon-192.png';
+
+        /* the printed card artwork carries its own QR (different encoding from
+           .qrimg) — lift it straight out of the card image so both match */
+        function useCardQR(imgEl) {
+          try {
+            if (!CARDS || !CARDS.ja || !CARDS.ja.f) return;
+            var im = new Image();
+            im.crossOrigin = 'anonymous';
+            im.onload = function () {
+              try {
+                var c = document.createElement('canvas');
+                c.width = im.width; c.height = im.height;
+                var x = c.getContext('2d');
+                x.drawImage(im, 0, 0);
+                var sx = Math.round(im.width * 0.76), ex = Math.round(im.width * 0.99);
+                var sy = Math.round(im.height * 0.61), ey = Math.round(im.height * 0.98);
+                var d = x.getImageData(0, 0, c.width, c.height).data;
+                var x0 = 1e9, y0 = 1e9, x1 = -1, y1 = -1;
+                for (var yy = sy; yy < ey; yy++) {
+                  for (var xx = sx; xx < ex; xx++) {
+                    var i = (yy * c.width + xx) * 4;
+                    if (d[i] < 120 && d[i + 1] < 120 && d[i + 2] < 120) {
+                      if (xx < x0) x0 = xx; if (xx > x1) x1 = xx;
+                      if (yy < y0) y0 = yy; if (yy > y1) y1 = yy;
+                    }
+                  }
+                }
+                var w = x1 - x0 + 1, h = y1 - y0 + 1;
+                if (w < 40 || h < 40) return;
+                var S = 4;
+                var o = document.createElement('canvas');
+                o.width = w * S; o.height = h * S;
+                var ox = o.getContext('2d');
+                ox.imageSmoothingEnabled = false;
+                ox.drawImage(c, x0, y0, w, h, 0, 0, o.width, o.height);
+                imgEl.src = o.toDataURL('image/png');
+              } catch (e) {}
+            };
+            im.src = CARDS.ja.f;
+          } catch (e) {}
+        }
         var mail = (D && D.slug ? D.slug : '') + '@biolisclinic.com';
         var tel = '03-6262-2677';
         var name = (D && D.name) || '';
@@ -202,6 +243,7 @@
 
         inner.appendChild(f);
         inner.appendChild(b);
+        useCardQR(f.querySelector('.zhf-qr'));
 
         /* fallback for browsers without container queries */
         function scaleZh() {
