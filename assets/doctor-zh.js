@@ -216,7 +216,7 @@
             im.src = CARDS.ja.f;
           } catch (e) {}
         }
-        var mail = (D && D.slug ? D.slug : '') + '@biolis.clinic.com';
+        var mail = (D && D.slug ? D.slug : '') + '@biolisclinic.com';
         var tel = '03-6262-2677';
         var name = (D && D.name) || '';
         var cred = (D && D.cred && D.cred.zh) || '';
