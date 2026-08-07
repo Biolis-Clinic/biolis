@@ -216,7 +216,7 @@
             im.src = CARDS.ja.f;
           } catch (e) {}
         }
-        var mail = (D && D.slug ? D.slug : '') + '@biolisclinic.com';
+        var mail = (D && D.slug ? D.slug : '') + '@biolis.clinic.com';
         var tel = '03-6262-2677';
         var name = (D && D.name) || '';
         var cred = (D && D.cred && D.cred.zh) || '';
@@ -238,7 +238,7 @@
           '<img class="zhb-logo" src="' + A + 'logo-v.png" alt="BiOLiS CLINIC">' +
           '<div class="zhb-tag">设计「未来的美丽与健康」</div>' +
           '<div class="zhb-addr">东京都中央区八重洲1-3-18 VORT东京八重洲maxim 5F</div>' +
-          '<div class="zhb-line">TEL 03-6262-2677　·　biolisclinic.com　·　@biolisclinic</div>' +
+          '<div class="zhb-line">TEL 03-6262-2677　·　biolisclinic.com　·　@biolis.clinic</div>' +
           '</div></div>';
 
         inner.appendChild(f);
