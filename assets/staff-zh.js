@@ -223,7 +223,7 @@
           '<img class="zhb-logo" src="' + A + 'logo-v.png" alt="BiOLiS CLINIC">' +
           '<div class="zhb-tag">设计「未来的美丽与健康」</div>' +
           '<div class="zhb-addr">东京都中央区八重洲1-3-18 VORT东京八重洲maxim 5F</div>' +
-          '<div class="zhb-line">TEL 03-6262-2677　·　biolisclinic.com　·　@biolis.clinic</div>' +
+          '<div class="zhb-line">TEL 03-6262-2677　·　biolisclinic.com　·　@biolisclinic_official</div>' +
           '</div></div>';
 
         inner.appendChild(f);
