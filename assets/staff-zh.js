@@ -29,7 +29,8 @@
     nagaoka:   { name: 'Shinsuke Nagaoka',  title: '首席数字官（CDO）' },
     ryu:       { name: 'Terufumi Ryu',      title: '总务・财务' },
     yamamoto:  { name: 'Ryoichi Yamamoto',  title: '会长室' },
-    matsumoto: { name: 'Takuya Matsumoto',  title: 'BiOLiS CLINIC 大使' }
+    matsumoto: { name: 'Takuya Matsumoto',  title: 'BiOLiS CLINIC 大使' },
+    nishimura: { name: 'Hiroshi Nishimura', title: '理事' }
   };
 
   var ORG = {
