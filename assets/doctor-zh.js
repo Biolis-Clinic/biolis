@@ -21,7 +21,8 @@
     Imai:     { field: '鼻部',   spec: '鼻部手术・截骨',      cred: '日本形成外科学会认证 整形外科专科医师' },
     Kim:      { field: '养肤',   spec: '养肤注射',           cred: '昵称「Emboss医生」' },
     Yarimizu: { field: '注射・养肤', spec: '麻醉科专科医师的注射・养肤', cred: '美容皮肤科医师・麻醉科医师' },
-    Yoshida:  { field: '小脸·轮廓', spec: '面部吸脂・线雕提升・瘦脸针', cred: '整形外科医师' }
+    Yoshida:  { field: '小脸·轮廓', spec: '面部吸脂・线雕提升・瘦脸针', cred: '整形外科医师' },
+    Suzuki:   { field: '眼周', spec: '去眼袋・哈姆拉法・埋线双眼皮', cred: '整形外科医师' }
   };
 
   var ORG = {
