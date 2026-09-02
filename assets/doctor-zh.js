@@ -20,7 +20,8 @@
     Kaneko:   { field: '眼睑',   spec: '眼睑手术',           cred: '医疗美容外科医师' },
     Imai:     { field: '鼻部',   spec: '鼻部手术・截骨',      cred: '日本形成外科学会认证 整形外科专科医师' },
     Kim:      { field: '养肤',   spec: '养肤注射',           cred: '昵称「Emboss医生」' },
-    Yarimizu: { field: '注射・养肤', spec: '麻醉科专科医师的注射・养肤', cred: '美容皮肤科医师・麻醉科医师' }
+    Yarimizu: { field: '注射・养肤', spec: '麻醉科专科医师的注射・养肤', cred: '美容皮肤科医师・麻醉科医师' },
+    Yoshida:  { field: '整形外科', spec: '保妥适®·乔雅登® 认证医师', cred: '整形外科医师' }
   };
 
   var ORG = {
