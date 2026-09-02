@@ -1,6 +1,6 @@
 /* BiOLiS CLINIC — staff / ambassador cards (I-dictionary template)
    Adds Simplified Chinese + per-language vCard.
-   Shared by: akimaru, katsuno, nagaoka, ryu, yamamoto, matsumoto */
+   Shared by: katsuno, nagaoka, ryu, yamamoto */
 (function () {
   'use strict';
 
@@ -24,12 +24,10 @@
 
   /* ---------- per-person : Latin name + Chinese title ---------- */
   var P = {
-    akimaru:   { name: 'Juri Akimaru',      title: '护士' },
     katsuno:   { name: 'Risa Katsuno',      title: '护士／总经理' },
     nagaoka:   { name: 'Shinsuke Nagaoka',  title: '首席数字官（CDO）' },
     ryu:       { name: 'Terufumi Ryu',      title: '总务・财务' },
     yamamoto:  { name: 'Ryoichi Yamamoto',  title: '会长室' },
-    matsumoto: { name: 'Takuya Matsumoto',  title: 'BiOLiS CLINIC 大使' },
     nishimura: { name: 'Hiroshi Nishimura', title: '理事' }
   };
 
